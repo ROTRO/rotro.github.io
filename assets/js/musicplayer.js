@@ -39,7 +39,7 @@ $(function () {
     ],
     albumArtworks = ["_1"],
     trackUrl = [
-      "../music/Mr.Kitty - After Dark.mp3",
+      "https://github.com/ROTRO/rotro.github.io/blob/e8289508c38a9b7b3ea63351c55df8e78ae1b788/assets/music/Mr.Kitty%20-%20After%20Dark.mp3?raw=true",
      
     ],
     playPreviousTrackButton = $("#play-previous"),
