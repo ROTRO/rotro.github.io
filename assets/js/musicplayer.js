@@ -30,16 +30,22 @@ $(function () {
     buffInterval = null,
     tFlag = false,
     albums = [
+      "Sting",
       "Mr.Kitty",
+      "Alef",
      
     ],
     trackNames = [
+      "Sting - Desert rose",
       "Mr.Kitty - After Dark",
+      "Alef - Sol",
      
     ],
-    albumArtworks = ["_1"],
+    albumArtworks = ["_1","_2","_3"],
     trackUrl = [
+      "https://github.com/ROTRO/rotro.github.io/blob/main/assets/music/Sting%20-%20Desert%20Rose.mp3?raw=true",
       "https://github.com/ROTRO/rotro.github.io/blob/e8289508c38a9b7b3ea63351c55df8e78ae1b788/assets/music/Mr.Kitty%20-%20After%20Dark.mp3?raw=true",
+      "https://github.com/ROTRO/rotro.github.io/blob/main/assets/music/Alef%20-%20Sol.mp3?raw=true",
      
     ],
     playPreviousTrackButton = $("#play-previous"),
