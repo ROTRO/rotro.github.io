@@ -26,7 +26,10 @@
  15. Grid (OpenGraph)
 
  */
-
+.imageCarousel{
+    width: 675;
+    height:1200 ;
+}
 :root {
     --theme-red: #ef3724;
     --theme-blue: #2960f7;

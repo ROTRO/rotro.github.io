@@ -245,3 +245,6 @@ $(function () {
 
   initPlayer();
 });
+const mainCarousel = new Carousel(document.querySelector("#myCarousel"), {
+  // Your options
+});
