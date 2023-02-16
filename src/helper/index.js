@@ -1,3 +1,3 @@
 export const pageTitle = (title) => {
-  return ( document.title = title + " - Creative Agency");
+  return ( document.title = title + " - ROTRO");
 }
