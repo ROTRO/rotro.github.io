@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "V2023" ]
+    branches: [ "March-Portfolio" ]
   pull_request:
-    branches: [ "V2023" ]
+    branches: [ "March-Portfolio" ]
 
 jobs:
   build:
