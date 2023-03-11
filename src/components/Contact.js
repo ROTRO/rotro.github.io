@@ -19,10 +19,10 @@ const Contact = () => {
     } else {
       emailjs
         .send(
-          "service_seruhwu", // service id
-          "template_21aw58z", // template id
+          "service_nemckni", // service id
+          "template_q2dzvyo", // template id
           mailData,
-          "Q3pccdLZhU-mZT7tQ" // public api
+          "REJhS4uFJS_WyLfHU" // public api
         )
         .then(
           (response) => {
@@ -67,7 +67,7 @@ const Contact = () => {
                   <div className="list_inner">
                     <i className="icon-phone" />
                     <span>
-                      <a href="#">+77 022 155 02 02</a>
+                      <a href="tel:+21651531353">+216 51 531 353</a>
                     </span>
                   </div>
                 </li>
@@ -75,13 +75,13 @@ const Contact = () => {
                   <div className="list_inner">
                     <i className="icon-mail-1" />
                     <span>
-                      <a href="mailto:example@gmail.com">example@gmail.com</a>
+                      <a href="mailto:bilelhedhli@gmail.com">bilelhedhli@gmail.com</a>
                     </span>
                   </div>
                 </li>
                 <li>
                   <div className="list_inner">
-                    <i className="icon-facebook-rect" />
+                    <i className="icon-instagram-rect" />
                     <span>
                       <a href="https://www.facebook.com">@facebookNick</a>
                     </span>
@@ -149,7 +149,7 @@ const Contact = () => {
                     />
                   </div>
                   <div className="edrea_tm_button">
-                    <input className="a" type="submit" value="Submit Message" />
+                    <input className="a" type="submit" value="Send" />
                   </div>
                   {/* If you want change mail address to yours, just open "modal" folder >> contact.php and go to line 4 and change detail to yours.  */}
                 </form>

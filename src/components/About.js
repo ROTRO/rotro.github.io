@@ -3,8 +3,8 @@ import AnimatedText from "./AnimatedText";
 import AboutPopup from "./popup/AboutPopup";
 
 const aboutData = {
-  firstName: "David",
-  lastName: "Parker",
+  firstName: "Bilel",
+  lastName: "Hedhli ",
   bithday: "01.07.1990",
   address: "Avon str. 22, NYC, USA",
   phn: "+77 022 155 02 02",
@@ -34,11 +34,7 @@ const aboutData = {
     { year: "2008 - 2010", unv: "Simone College", degree: "Associate Degree" },
   ],
   working: [
-    {
-      year: "2018 - running",
-      company: "Envato Elements",
-      deg: "Exclusive Author",
-    },
+    { year: "2018 - running",company: "Envato Elements",deg: "Exclusive Author",},
     { year: "2015 - 2018", company: "Avo Corporation", deg: "Content Manager" },
     { year: "2012 - 2015", company: "FC Barcelona", deg: "Football Player" },
   ],

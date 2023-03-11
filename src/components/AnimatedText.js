@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const homeData = {
-  skills: ["Designer", "Developer", "Freelancer"],
+  skills: ["Consultant", "Developer", "Auditor"],
 };
 const AnimatedText = () => {
   const [text, setText] = useState(0);
@@ -14,7 +14,7 @@ const AnimatedText = () => {
   });
   return (
     <span className="cd-headline rotate-1">
-      <span className="blc">Creative </span>
+      <span className="blc">Innovative </span>
       <span className="cd-words-wrapper">
         {homeData.skills.map((skill, i) => (
           <b key={i} className={text === i ? "is-visible" : "is-hidden"}>

@@ -40,27 +40,12 @@ const AboutPopup = ({ open, close, aboutData }) => {
                     </span>
                   </div>
                 </li>
-                <li>
-                  <div className="list_inner">
-                    <i className="icon-calendar" />
-                    <span>{aboutData.bithday}</span>
-                  </div>
-                </li>
-                <li>
-                  <div className="list_inner">
-                    <i className="icon-location" />
-                    <span>
-                      <a href="#" className="href_location">
-                        {aboutData.address}
-                      </a>
-                    </span>
-                  </div>
-                </li>
+                
                 <li>
                   <div className="list_inner">
                     <i className="icon-phone" />
                     <span>
-                      <a href="#">{aboutData.phn}</a>
+                      <a href="#">{aboutData  .phn}</a>
                     </span>
                   </div>
                 </li>
@@ -95,10 +80,10 @@ const AboutPopup = ({ open, close, aboutData }) => {
               </div>
               <div className="text">
                 <p>
-                  Hello everybody! My name is <span>David Parker.</span> I am a
-                  graphic designer, and {`I'm`} very passionate and dedicated to
-                  my work. With 20 years experience as a professional a graphic
-                  designer, I have acquired the skills and knowledge.
+                  Hello everybody! My name is <span>Bilel Hedhli.</span> I am a
+                  Full-Stack developper, and {`I'm`} very passionate and dedicated to
+                  my work. With 3 years experience as a Full-Stack Developper, 
+                  I have acquired the skills and knowledge in order to build my own career.
                 </p>
               </div>
             </div>
@@ -145,7 +130,7 @@ const AboutPopup = ({ open, close, aboutData }) => {
                           className="number"
                           style={{ right: `${100 - programming.value}%` }}
                         >
-                          {programming.value}%
+                          {programming.value}
                         </span>
                       </span>
                       <div className="background">
