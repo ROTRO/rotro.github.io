@@ -34,7 +34,7 @@ const reducer = (state, action) => {
 const state = (props) => {
   const initialState = {
     nav: "home",
-    color: "#4169e1",
+    color: "#9200ee",
     megicCursor: "show",
   };
   const [state, dispatch] = useReducer(reducer, initialState);
