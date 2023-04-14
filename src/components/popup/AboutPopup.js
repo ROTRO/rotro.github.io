@@ -62,7 +62,7 @@ const AboutPopup = ({ open, close, aboutData }) => {
               </ul>
             </div>
             <div className="edrea_tm_button full">
-              <a href="img/about/1.jpg" download>
+              <a href="cv/BilelHedhli.pdf" download>
                 Download CV
               </a>
             </div>
@@ -236,7 +236,7 @@ const AboutPopup = ({ open, close, aboutData }) => {
                 </ul>
               </div>
             </div>
-            <div className="partners">
+            {/* <div className="partners">
               <div className="about_title">
                 <h3>
                   <span>
@@ -258,8 +258,8 @@ const AboutPopup = ({ open, close, aboutData }) => {
                     ))}
                 </ul>
               </div>
-            </div>
-            <div className="testimonial">
+            </div> */}
+            {/* <div className="testimonial">
               <div className="about_title">
                 <h3>
                   <span>
@@ -341,7 +341,7 @@ const AboutPopup = ({ open, close, aboutData }) => {
                   </SwiperSlide>
                 </Swiper>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
