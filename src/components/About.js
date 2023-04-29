@@ -5,10 +5,10 @@ import AboutPopup from "./popup/AboutPopup";
 const aboutData = {
   firstName: "Bilel",
   lastName: "Hedhli ",
-  bithday: "01.07.1990",
-  address: "Avon str. 22, NYC, USA",
-  phn: "+77 022 155 02 02",
-  email: "example@gmail.com",
+  bithday: "1998",
+  address: "",
+  phn: "+216 51 531 353",
+  email: "bilelhedhli@gmail.com",
   serviceLists: [
     "Website Development",
     "Digital Experience",
@@ -18,25 +18,26 @@ const aboutData = {
   ],
   skills: {
     programming: [
-      { name: "WordPress", value: "95" },
+      { name: "NextJs", value: "60" },
+      { name: "React", value: "56" },
+      { name: "Ionic", value: "80" },
       { name: "JavaScript", value: "80" },
       { name: "Angular", value: "90" },
     ],
     language: [
       { name: "English", value: "95" },
-      { name: "Russian", value: "80" },
-      { name: "Arabic", value: "90" },
+      { name: "French", value: "80" },
+      { name: "Arabic", value: "100" },
     ],
   },
   education: [
-    { year: "2014 - 2016", unv: "Oxford Univercity", degree: "Master Degree" },
-    { year: "2010 - 2014", unv: "Texas Univercity", degree: "Bachelor Degree" },
-    { year: "2008 - 2010", unv: "Simone College", degree: "Associate Degree" },
+    { year: "2020 - 2022", unv: "I.S.E.T Rades", degree: "Master Degree in Mobile App Developpment" },
+    { year: "2017 - 2020", unv: "I.S.E.T Bizerte", degree: "Bachelor Degree in Information Systems Developpment" },
+    { year: "2013 - 2017", unv: "Menzel Bourguiba HS", degree: "Associate Degree in Computer Science" },
   ],
   working: [
-    { year: "2018 - running",company: "Envato Elements",deg: "Exclusive Author",},
-    { year: "2015 - 2018", company: "Avo Corporation", deg: "Content Manager" },
-    { year: "2012 - 2015", company: "FC Barcelona", deg: "Football Player" },
+    { year: "Feb 2021 - Feb 2023", company: "NovaSolvd", deg: "IT Manager" },
+    { year: "Feb 2020 - Dec 2021", company: "DndServ", deg: "Full-stack dev" },
   ],
   partnersLogos: [
     "img/partners/1.png",
@@ -76,7 +77,7 @@ const About = () => {
               </div>
               <div className="text">
                 <p>
-                  My name is <span>David Parker.</span> I am a graphic designer,
+                  My name is <span>Bilel Hedhli.</span> I am a graphic designer,
                   and {`I'm`} very passionate and dedicated to my work. With 20
                   years experience as a professional a graphic designer, I have
                   acquired the skills and knowledge.
