@@ -531,10 +531,10 @@ h6 {
 .edrea_tm_about .left .image img {
   position: relative;
   min-width: 100%;
-  opacity: 0;
+  opacity: 1;
 }
 .edrea_tm_about .left .image .main {
-  position: absolute;
+  position: relative;
   top: 0px;
   bottom: 0px;
   left: 0px;
@@ -1534,11 +1534,11 @@ h6 {
 }
 .edrea_tm_modalbox .portfolio_popup_details .top_image img {
   position: relative;
-  opacity: 0;
+  opacity: 1;
   min-width: 100%;
 }
 .edrea_tm_modalbox .portfolio_popup_details .top_image .main {
-  position: absolute;
+  position: relative;
   top: 0px;
   bottom: 0px;
   left: 0px;
@@ -1626,7 +1626,7 @@ h6 {
   li
   .image
   img {
-  opacity: 0;
+  opacity: 1;
   min-width: 100%;
 }
 .edrea_tm_modalbox
@@ -1636,7 +1636,7 @@ h6 {
   li
   .image
   .main {
-  position: absolute;
+  position: relative;
   top: 0px;
   bottom: 0px;
   left: 0px;
@@ -1683,7 +1683,7 @@ h6 {
   min-width: 100%;
 }
 .edrea_tm_news .news_list .image .main {
-  position: absolute;
+  position: relative;
   top: 0px;
   bottom: 0px;
   left: 0px;
