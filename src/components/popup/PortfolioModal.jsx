@@ -14,6 +14,15 @@ const PortfolioModal = ({
   let render = false;
   let img_Array = [
     {
+      main: "img/portfolio/esteps/1.png",
+      images: [
+        `img/portfolio/esteps/2.png`,
+        `img/portfolio/esteps/3.png`,
+        `img/portfolio/esteps/4.png`,
+        `img/portfolio/esteps/5.png`,
+      ],
+    },
+    {
       main: "img/portfolio/MMECompany.png",
       images: [
         `img/portfolio/2.png`,
@@ -46,6 +55,15 @@ const PortfolioModal = ({
         `img/portfolio/myF/1.png`,
         `img/portfolio/myF/2.png`,
         `img/portfolio/myF/3.png`,
+      ],
+    },
+    {
+      main: "img/portfolio/GDF/1.png",
+      images: [
+        `img/portfolio/GDF/2.png`,
+        `img/portfolio/GDF/3.png`,
+        `img/portfolio/GDF/4.png`,
+        `img/portfolio/GDF/5.png`,
       ],
     },
   ];
