@@ -23,6 +23,7 @@ const aboutData = {
       { name: "Ionic", value: "80" },
       { name: "JavaScript", value: "80" },
       { name: "Angular", value: "90" },
+      { name: "Wordpress", value: "70" },
     ],
     language: [
       { name: "English", value: "95" },
@@ -36,6 +37,7 @@ const aboutData = {
     { year: "2013 - 2017", unv: "Menzel Bourguiba HS", degree: "Associate Degree in Computer Science" },
   ],
   working: [
+    { year: "Mai 2021 - March 2024", company: "eSteps Inc.", deg: "Tech Lead" },
     { year: "Feb 2021 - Feb 2023", company: "NovaSolvd", deg: "IT Manager" },
     { year: "Feb 2020 - Dec 2021", company: "DndServ", deg: "Full-stack dev" },
   ],
@@ -77,10 +79,11 @@ const About = () => {
               </div>
               <div className="text">
                 <p>
-                  My name is <span>Bilel Hedhli.</span> I am a graphic designer,
-                  and {`I'm`} very passionate and dedicated to my work. With 20
-                  years experience as a professional a graphic designer, I have
-                  acquired the skills and knowledge.
+                My name is <span>Bilel Hedhli.</span> I am a seasoned programmer with expertise in multiple technologies.
+                 With over 3 years of 
+                 experience in the field, I bring a wealth of knowledge and a steadfast dedication to my craft.
+                  My professional journey has equipped me with the skills and insights necessary to deliver
+                   top-tier solutions in programming and web development projects and to lead successful teams.
                 </p>
               </div>
               <div className="edrea_tm_button">

@@ -53,16 +53,7 @@ const Contact = () => {
           <div className="wrapper">
             <div className="left">
               <ul>
-                <li>
-                  <div className="list_inner">
-                    <i className="icon-location" />
-                    <span>
-                      <a href="#" className="href_location">
-                        Avon str. 22, NYC, USA
-                      </a>
-                    </span>
-                  </div>
-                </li>
+                
                 <li>
                   <div className="list_inner">
                     <i className="icon-phone" />
@@ -83,7 +74,7 @@ const Contact = () => {
                   <div className="list_inner">
                     <i className="icon-instagram-rect" />
                     <span>
-                      <a href="https://www.facebook.com">@facebookNick</a>
+                      <a href="https://www.linkedin.com/in/bilel-hedhli/">@Bilel Hedhli</a>
                     </span>
                   </div>
                 </li>

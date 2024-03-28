@@ -32,11 +32,11 @@ const Header = () => {
                 Portfolio
               </a>
             </li>
-            <li className={activeNav("news")}>
+            {/* <li className={activeNav("news")}>
               <a href="#news" onClick={() => changeNav("news")}>
                 News
               </a>
-            </li>
+            </li> */}
             <li className={activeNav("contact")}>
               <a href="#contact" onClick={() => changeNav("contact")}>
                 Contact
