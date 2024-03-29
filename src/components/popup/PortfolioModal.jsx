@@ -14,12 +14,12 @@ const PortfolioModal = ({
   let render = false;
   let img_Array = [
     {
-      main: "img/portfolio/esteps/1.png",
+      main: "img/portfolio/esteps/1.PNG",
       images: [
-        `img/portfolio/esteps/2.png`,
-        `img/portfolio/esteps/3.png`,
-        `img/portfolio/esteps/4.png`,
-        `img/portfolio/esteps/5.png`,
+        `img/portfolio/esteps/2.PNG`,
+        `img/portfolio/esteps/3.PNG`,
+        `img/portfolio/esteps/4.PNG`,
+        `img/portfolio/esteps/5.PNG`,
       ],
     },
     {
@@ -43,27 +43,27 @@ const PortfolioModal = ({
     {
       main: "img/portfolio/JUR/JuriCar.png",
       images: [
-        `img/portfolio/JUR/1.png`,
-        `img/portfolio/JUR/2.png`,
-        `img/portfolio/JUR/3.png`,
-        `img/portfolio/JUR/4.png`,
+        `img/portfolio/JUR/1.PNG`,
+        `img/portfolio/JUR/2.PNG`,
+        `img/portfolio/JUR/3.PNG`,
+        `img/portfolio/JUR/4.pPNGng`,
       ],
     },
     {
       main: "img/portfolio/myF/myFinance.png",
       images: [
-        `img/portfolio/myF/1.png`,
-        `img/portfolio/myF/2.png`,
-        `img/portfolio/myF/3.png`,
+        `img/portfolio/myF/1.PNG`,
+        `img/portfolio/myF/2.PNG`,
+        `img/portfolio/myF/3.PNG`,
       ],
     },
     {
-      main: "img/portfolio/GDF/1.png",
+      main: "img/portfolio/GDF/1.PNG",
       images: [
-        `img/portfolio/GDF/2.png`,
-        `img/portfolio/GDF/3.png`,
-        `img/portfolio/GDF/4.png`,
-        `img/portfolio/GDF/5.png`,
+        `img/portfolio/GDF/2.PNG`,
+        `img/portfolio/GDF/3.PNG`,
+        `img/portfolio/GDF/4.PNG`,
+        `img/portfolio/GDF/5.PNG`,
       ],
     },
   ];

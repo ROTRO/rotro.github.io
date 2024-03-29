@@ -81,9 +81,9 @@ const About = () => {
                 <p>
                 My name is <span>Bilel Hedhli.</span> I am a seasoned programmer with expertise in multiple technologies.
                  With over 3 years of 
-                 experience in the field, I bring a wealth of knowledge and a steadfast dedication to my craft.
+                 experience in the field
                   My professional journey has equipped me with the skills and insights necessary to deliver
-                   top-tier solutions in programming and web development projects and to lead successful teams.
+                    solutions in programming and web development projects and to lead successful teams.
                 </p>
               </div>
               <div className="edrea_tm_button">

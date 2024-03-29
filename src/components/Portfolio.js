@@ -19,7 +19,7 @@ const Portfolio = () => {
         of patients. With remote monitoring technology, eSteps aims to
          empower MS patients to take control of their health and achieve optimal outcomes, ultimately transforming
           the way MS is diagnosed, monitored, and treated.`,
-      img: "/img/portfolio/esteps/1.png",
+      img: "/img/portfolio/esteps/1.PNG",
     },
     {
       title: "MMECompany",
@@ -95,7 +95,7 @@ At the forefront of our platform is an intuitive Angular frontend, providing use
       description2: `Our platform facilitates seamless management of employees, clients, suppliers, and products, offering centralized repositories and streamlined workflows for enhanced productivity and efficiency. From employee scheduling and client management to supplier relations and product inventory tracking, our platform provides end-to-end solutions to optimize business operations and drive growth.
       With real-time updates and notifications powered by Socket.IO, users can stay informed about critical business activities, ensuring timely decision-making and proactive management. Additionally, MongoDB serves as a reliable and scalable database solution, offering flexibility and performance to meet the demands of dynamic business environments.
       In summary, our Angular-powered business management platform, backed by Mongoose, Express.js, Node.js, Socket.IO, and MongoDB, revolutionizes the way businesses manage their invoicing lifecycle. With a comprehensive suite of features and robust technology stack, we empower businesses to streamline operations, improve efficiency, and achieve sustainable growth in today's competitive landscape.`,
-      img: "/img/portfolio/GDF/1.png",
+      img: "/img/portfolio/GDF/1.PNG",
     },
   ];
   const [modal, setModal] = useState(false);
