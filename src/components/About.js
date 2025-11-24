@@ -1,29 +1,30 @@
 import { Fragment, useState } from "react";
 import AnimatedText from "./AnimatedText";
 import AboutPopup from "./popup/AboutPopup";
+import { useLanguage } from "../context/LanguageContext";
 
 const aboutData = {
   firstName: "Bilel",
-  lastName: "Hedhli ",
+  lastName: "Hedhli",
   bithday: "1998",
-  address: "",
+  address: "Tunis, Tunisia",
   phn: "+216 51 531 353",
   email: "bilelhedhli@gmail.com",
   serviceLists: [
-    "Website Development",
-    "Digital Experience",
-    "Content Marketing",
-    "Social Media Design",
-    "Shared Web Hosting",
+    "Cloud Solutions",
+    "Full-Stack Development",
+    "Backend Systems",
+    "CI/CD Pipelines",
+    "Microservices Architecture",
   ],
   skills: {
     programming: [
-      { name: "NextJs", value: "60" },
-      { name: "React", value: "56" },
+      { name: "Angular", value: "95" },
+      { name: "React/Next.js", value: "90" },
+      { name: "Node.js", value: "90" },
+      { name: "AWS/Cloud", value: "85" },
       { name: "Ionic", value: "80" },
-      { name: "JavaScript", value: "80" },
-      { name: "Angular", value: "90" },
-      { name: "Wordpress", value: "70" },
+      { name: "MongoDB/SQL", value: "85" },
     ],
     language: [
       { name: "English", value: "95" },
@@ -32,14 +33,20 @@ const aboutData = {
     ],
   },
   education: [
-    { year: "2020 - 2022", unv: "I.S.E.T Rades", degree: "Master Degree in Mobile App Developpment" },
-    { year: "2017 - 2020", unv: "I.S.E.T Bizerte", degree: "Bachelor Degree in Information Systems Developpment" },
-    { year: "2013 - 2017", unv: "Menzel Bourguiba HS", degree: "Associate Degree in Computer Science" },
+    { year: "2020 - 2022", unv: "I.S.E.T Rades", degree: "MSc in Computer Software & Media Applications" },
+    { year: "2017 - 2020", unv: "I.S.E.T Bizerte", degree: "BSc in Computer Software Engineering" },
   ],
   working: [
-    { year: "Mai 2021 - March 2024", company: "eSteps Inc.", deg: "Tech Lead" },
-    { year: "Feb 2021 - Feb 2023", company: "NovaSolvd", deg: "IT Manager" },
-    { year: "Feb 2020 - Dec 2021", company: "DndServ", deg: "Full-stack dev" },
+    { year: "2024 - Present", company: "Aquadeep", deg: "Technical Lead" },
+    { year: "2023 - 2024", company: "eSteps Health", deg: "Software Engineering Lead" },
+    { year: "2022 - 2023", company: "NOVASOLVD", deg: "IT Project Manager" },
+    { year: "2020 - 2021", company: "DnD Services", deg: "Full-Stack Developer" },
+  ],
+  certifications: [
+    "POESAM 2023 First Prize – Innovative Connected Health Solution",
+    "AWS (in progress)",
+    "Cybersecurity Foundations",
+    "Java Programming"
   ],
   partnersLogos: [
     "img/partners/1.png",
@@ -51,6 +58,8 @@ const aboutData = {
 
 const About = () => {
   const [popup, setPopup] = useState(false);
+  const { t } = useLanguage();
+
   return (
     <Fragment>
       <AboutPopup
@@ -79,16 +88,12 @@ const About = () => {
               </div>
               <div className="text">
                 <p>
-                My name is <span>Bilel Hedhli.</span> I am a seasoned programmer with expertise in multiple technologies.
-                 With over 3 years of 
-                 experience in the field
-                  My professional journey has equipped me with the skills and insights necessary to deliver
-                    solutions in programming and web development projects and to lead successful teams.
+                  {t('bio_desc')}
                 </p>
               </div>
               <div className="edrea_tm_button">
                 <a href="#" onClick={() => setPopup(true)}>
-                  Learn More
+                  {t('learn_more')}
                 </a>
               </div>
             </div>

@@ -1,10 +1,12 @@
 import { Fragment, useContext, useState } from "react";
 import { context } from "../context/context";
+import { useLanguage } from "../context/LanguageContext";
 
 const MobileHeader = () => {
   const [toggle, setToggle] = useState(false);
   const navContext = useContext(context);
   const { nav, changeNav } = navContext;
+  const { language, setLanguage, t } = useLanguage();
 
   const activeNav = (value) => (value == nav ? "active" : "");
   const onClick = (value) => {
@@ -40,28 +42,45 @@ const MobileHeader = () => {
             <ul className="transition_link">
               <li className={activeNav("home")}>
                 <a href="#home" onClick={() => onClick("home")}>
-                  Home
+                  {t('home')}
                 </a>
               </li>
               <li className={activeNav("about")}>
                 <a href="#about" onClick={() => onClick("about")}>
-                  About
+                  {t('about')}
                 </a>
               </li>
               <li className={activeNav("portfolio")}>
                 <a href="#portfolio" onClick={() => onClick("portfolio")}>
-                  Portfolio
+                  {t('portfolio')}
                 </a>
               </li>
-              <li className={activeNav("news")}>
+              {/* <li className={activeNav("news")}>
                 <a href="#news" onClick={() => onClick("news")}>
-                  News
+                  {t('news')}
                 </a>
-              </li>
+              </li> */}
               <li className={activeNav("contact")}>
                 <a href="#contact" onClick={() => onClick("contact")}>
-                  Contact
+                  {t('contact')}
                 </a>
+              </li>
+              <li>
+                <div className="language-switcher" style={{ marginTop: '20px', cursor: 'pointer', display: 'flex', gap: '10px', justifyContent: 'center' }}>
+                  <span 
+                    onClick={() => setLanguage('en')} 
+                    style={{ fontWeight: language === 'en' ? 'bold' : 'normal', color: language === 'en' ? '#000' : '#888' }}
+                  >
+                    EN
+                  </span>
+                  <span style={{ color: '#888' }}>|</span>
+                  <span 
+                    onClick={() => setLanguage('fr')} 
+                    style={{ fontWeight: language === 'fr' ? 'bold' : 'normal', color: language === 'fr' ? '#000' : '#888' }}
+                  >
+                    FR
+                  </span>
+                </div>
               </li>
             </ul>
           </div>

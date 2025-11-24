@@ -5,10 +5,12 @@ import { context } from "../../context/context";
 import { testimonialSlider } from "../../sliderProps";
 import AnimatedText from "../AnimatedText";
 import Modal from "./Modal";
+import { useLanguage } from "../../context/LanguageContext";
 
 const AboutPopup = ({ open, close, aboutData }) => {
   const colorContext = useContext(context);
   const { color } = colorContext;
+  const { t } = useLanguage();
 
   return (
     <Modal open={open} close={close}>
@@ -45,7 +47,7 @@ const AboutPopup = ({ open, close, aboutData }) => {
                   <div className="list_inner">
                     <i className="icon-phone" />
                     <span>
-                      <a href="#">{aboutData  .phn}</a>
+                      <a href="#">{aboutData.phn}</a>
                     </span>
                   </div>
                 </li>
@@ -63,7 +65,7 @@ const AboutPopup = ({ open, close, aboutData }) => {
             </div>
             <div className="edrea_tm_button full">
               <a href="cv/BilelHedhli.pdf" download>
-                Download CV
+                {t('download_cv')}
               </a>
             </div>
           </div>
@@ -74,16 +76,13 @@ const AboutPopup = ({ open, close, aboutData }) => {
               <div className="about_title">
                 <h3>
                   <span>
-                    About <span className="coloring">Me</span>
+                    {t('about_me').split(' ')[0]} <span className="coloring">{t('about_me').split(' ').slice(1).join(' ')}</span>
                   </span>
                 </h3>
               </div>
               <div className="text">
                 <p>
-                  Hello everybody! My name is <span>Bilel Hedhli.</span> I am a
-                  Full-Stack developper, and {`I'm`} very passionate and dedicated to
-                  my work. With 3 years experience as a Full-Stack Developper, 
-                  I have acquired the skills and knowledge in order to build my own career.
+                  {t('bio_desc')}
                 </p>
               </div>
             </div>
@@ -91,7 +90,7 @@ const AboutPopup = ({ open, close, aboutData }) => {
               <div className="about_title">
                 <h3>
                   <span>
-                    Quality <span className="coloring">Services</span>
+                    {t('quality_services').split(' ')[0]} <span className="coloring">{t('quality_services').split(' ').slice(1).join(' ')}</span>
                   </span>
                 </h3>
               </div>
@@ -111,7 +110,7 @@ const AboutPopup = ({ open, close, aboutData }) => {
               <div className="about_title">
                 <h3>
                   <span>
-                    Programming <span className="coloring">Skills</span>
+                    {t('programming_skills').split(' ')[0]} <span className="coloring">{t('programming_skills').split(' ').slice(1).join(' ')}</span>
                   </span>
                 </h3>
               </div>
@@ -149,7 +148,7 @@ const AboutPopup = ({ open, close, aboutData }) => {
               <div className="about_title">
                 <h3>
                   <span>
-                    Language <span className="coloring">Skills</span>
+                    {t('language_skills').split(' ')[0]} <span className="coloring">{t('language_skills').split(' ').slice(1).join(' ')}</span>
                   </span>
                 </h3>
               </div>
@@ -184,7 +183,7 @@ const AboutPopup = ({ open, close, aboutData }) => {
               <div className="about_title">
                 <h3>
                   <span>
-                    Education <span className="coloring">Timeline</span>
+                    {t('education_timeline').split(' ')[0]} <span className="coloring">{t('education_timeline').split(' ').slice(1).join(' ')}</span>
                   </span>
                 </h3>
               </div>
@@ -212,7 +211,7 @@ const AboutPopup = ({ open, close, aboutData }) => {
               <div className="about_title">
                 <h3>
                   <span>
-                    Working <span className="coloring">Timeline</span>
+                    {t('working_timeline').split(' ')[0]} <span className="coloring">{t('working_timeline').split(' ').slice(1).join(' ')}</span>
                   </span>
                 </h3>
               </div>
@@ -236,112 +235,26 @@ const AboutPopup = ({ open, close, aboutData }) => {
                 </ul>
               </div>
             </div>
-            {/* <div className="partners">
+            <div className="service">
               <div className="about_title">
                 <h3>
                   <span>
-                    My <span className="coloring">Partners</span>
+                    {t('certifications_awards').split(' ')[0]} <span className="coloring">{t('certifications_awards').split(' ').slice(1).join(' ')}</span>
                   </span>
                 </h3>
               </div>
               <div className="list">
                 <ul>
-                  {aboutData &&
-                    aboutData.partnersLogos &&
-                    aboutData.partnersLogos.map((logo, i) => (
+                  {aboutData.certifications &&
+                    aboutData.certifications.map((cert, i) => (
                       <li key={i}>
-                        <div className="list_inner">
-                          <img src={logo} alt="" />
-                          <a className="cavani_tm_full_link" href="#" />
-                        </div>
+                        <i className="icon-award" />
+                        {cert}
                       </li>
                     ))}
                 </ul>
               </div>
-            </div> */}
-            {/* <div className="testimonial">
-              <div className="about_title">
-                <h3>
-                  <span>
-                    Clients <span className="coloring">Feedback</span>
-                  </span>
-                </h3>
-              </div>
-              <div className="list">
-                <Swiper {...testimonialSlider} className="owl-carousel">
-                  <SwiperSlide>
-                    <div className="list_inner">
-                      <div className="text">
-                        <i className="icon-quote-left" />
-                        <p>
-                          Beautiful minimalist design and great, fast response
-                          with support. Highly recommend. Thanks Marketify!
-                        </p>
-                      </div>
-                      <div className="details">
-                        <div className="image">
-                          <div
-                            className="main"
-                            data-img-url="img/testimonials/1.jpg"
-                          />
-                        </div>
-                        <div className="info">
-                          <h3>Alexander Walker</h3>
-                          <span>Graphic Designer</span>
-                        </div>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="list_inner">
-                      <div className="text">
-                        <i className="icon-quote-left" />
-                        <p>
-                          These people really know what they are doing! Great
-                          customer support availability and supperb kindness.
-                        </p>
-                      </div>
-                      <div className="details">
-                        <div className="image">
-                          <div
-                            className="main"
-                            data-img-url="img/testimonials/2.jpg"
-                          />
-                        </div>
-                        <div className="info">
-                          <h3>Armin Van Buuren</h3>
-                          <span>Content Manager</span>
-                        </div>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="list_inner">
-                      <div className="text">
-                        <i className="icon-quote-left" />
-                        <p>
-                          I had a little problem and the support was just
-                          awesome to quickly solve the situation. And keep going
-                          on.
-                        </p>
-                      </div>
-                      <div className="details">
-                        <div className="image">
-                          <div
-                            className="main"
-                            data-img-url="img/testimonials/3.jpg"
-                          />
-                        </div>
-                        <div className="info">
-                          <h3>Baraka Clinton</h3>
-                          <span>English Teacher</span>
-                        </div>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                </Swiper>
-              </div>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
