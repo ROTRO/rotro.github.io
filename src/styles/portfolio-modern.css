@@ -104,11 +104,12 @@
 
 /* Filter Styles */
 .project-filter {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
 }
 
 .filter-btn {
