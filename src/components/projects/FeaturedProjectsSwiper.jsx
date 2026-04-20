@@ -18,6 +18,10 @@ export default function FeaturedProjectsSwiper() {
         modules={[Mousewheel, Keyboard, Pagination]}
         slidesPerView={1}
         grabCursor
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         speed={reduce ? 0 : 720}
         mousewheel={{
           forceToAxis: true,

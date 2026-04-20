@@ -44,7 +44,7 @@ export default function AboutPage() {
             style={{ padding: '1.25rem', overflow: 'hidden' }}
           >
             <img
-              src="/images/avatar_3.jpeg"
+              src="https://scontent.ftun8-1.fna.fbcdn.net/v/t39.30808-6/275285847_5522209134461962_246686062498108650_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=oRC6wfmRdo4Q7kNvwGuxXvc&_nc_oc=AdpxkaAJlKDCcGVFLa3cr9ER7grV_xMKZRlzMxngapqjV5yIUoQUx-pCwBykVRSWV2o&_nc_zt=23&_nc_ht=scontent.ftun8-1.fna&_nc_gid=ATh_L7dVIjckLs3PPcdJig&_nc_ss=7a3a8&oh=00_Af3k_4ud2MW18LIbV7iBqSiwJnD7NAuo0toCQsD41R5Llg&oe=69EC1063"
               alt={`Portrait of ${profile.name}`}
               width={720}
               height={900}
