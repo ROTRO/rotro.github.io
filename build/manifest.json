@@ -1,6 +1,6 @@
 {
-  "short_name": "Arino",
-  "name": "Creative Agency React Template",
+  "short_name": "Bilel Hedhli",
+  "name": "Bilel Hedhli — Portfolio",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#ffffff",
-  "background_color": "#181818"
+  "theme_color": "#07080c",
+  "background_color": "#07080c"
 }
