@@ -9,15 +9,14 @@ function absoluteUrl(pathname = '/') {
       : pathname.startsWith('/')
         ? pathname
         : `/${pathname}`;
-  const base =
-    typeof window !== 'undefined'
-      ? window.location.origin
-      : profile.canonicalOrigin;
+  const base = profile.siteOrigin.replace(/\/+$/, '');
   return `${base}${normalized === '/' ? '/' : normalized}`;
 }
 
 export default function Seo({ title, description, path = '/', noIndex }) {
-  const pageTitle = title ? `${title} — ${profile.name}` : profile.siteTitle;
+  const pageTitle = title
+    ? `${title} — ${profile.siteName}`
+    : profile.siteTitle;
   const desc = description || profile.siteDescription;
   const url = absoluteUrl(path);
 
@@ -28,11 +27,6 @@ export default function Seo({ title, description, path = '/', noIndex }) {
     jobTitle: profile.title,
     email: `mailto:${profile.email}`,
     url: profile.portfolioUrl,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Tunis',
-      addressCountry: 'TN',
-    },
     sameAs: [profile.linkedInUrl, profile.portfolioUrl],
   };
 

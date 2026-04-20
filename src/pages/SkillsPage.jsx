@@ -1,11 +1,11 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
 import Seo from '../components/site/Seo';
 import { skillGroups } from '../data/skills';
-import { useMotionSafe } from '../hooks/useMotionSafe';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function SkillsPage() {
-  const { fadeUp, transition, stagger, reduce } = useMotionSafe();
+  const rootRef = useRef(null);
+  useScrollReveal(rootRef, { y: 24, stagger: 0.09, start: 'top 84%' });
 
   return (
     <>
@@ -15,29 +15,24 @@ export default function SkillsPage() {
         description="Technical skills across full-stack engineering, cloud platforms, data stores, and secure architecture."
       />
       <section className="section">
-        <div className="container">
-          <motion.div {...fadeUp} transition={transition}>
+        <div ref={rootRef} className="container">
+          <div data-reveal>
             <p className="kicker">Skills</p>
             <h1 className="h1">Tools and disciplines I practice daily</h1>
             <p className="lead">
               Grouped for readability—everything listed here is backed by production
               experience, not buzzword padding.
             </p>
-          </motion.div>
+          </div>
 
           <div className="skill-grid" style={{ marginTop: '2rem' }}>
-            {skillGroups.map((group, index) => (
-              <motion.section
+            {skillGroups.map((group) => (
+              <section
                 key={group.title}
-                className="surface skill-block"
-                initial={reduce ? false : { opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  ...transition,
-                  delay: reduce ? 0 : 0.08 + index * stagger,
-                }}
+                className="surface skill-block elevate-card"
+                data-reveal
               >
-                <h2>{group.title}</h2>
+                <h3 className="skill-block__title">{group.title}</h3>
                 <div className="chips" aria-label={group.title}>
                   {group.items.map((item) => (
                     <span key={item} className="chip">
@@ -45,7 +40,7 @@ export default function SkillsPage() {
                     </span>
                   ))}
                 </div>
-              </motion.section>
+              </section>
             ))}
           </div>
         </div>

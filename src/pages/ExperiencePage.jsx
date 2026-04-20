@@ -1,11 +1,11 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
 import Seo from '../components/site/Seo';
 import { experience } from '../data/experience';
-import { useMotionSafe } from '../hooks/useMotionSafe';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function ExperiencePage() {
-  const { fadeUp, transition, stagger, reduce } = useMotionSafe();
+  const rootRef = useRef(null);
+  useScrollReveal(rootRef, { y: 28, stagger: 0.1, start: 'top 84%' });
 
   return (
     <>
@@ -15,31 +15,26 @@ export default function ExperiencePage() {
         description="Professional experience across technical leadership, full-stack delivery, and cloud solutions."
       />
       <section className="section">
-        <div className="container">
-          <motion.div {...fadeUp} transition={transition}>
+        <div ref={rootRef} className="container">
+          <div data-reveal>
             <p className="kicker">Experience</p>
             <h1 className="h1">Roles that shaped how I build</h1>
             <p className="lead">
               A concise history focused on outcomes: architecture, delivery speed,
               reliability, and team leadership.
             </p>
-          </motion.div>
+          </div>
 
-          <div className="divider" />
+          <div className="divider" data-reveal />
 
           <div className="timeline" style={{ marginTop: '1.5rem' }}>
-            {experience.map((job, index) => (
-              <motion.article
+            {experience.map((job) => (
+              <article
                 key={job.id}
-                className="surface job-card"
-                initial={reduce ? false : { opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  ...transition,
-                  delay: reduce ? 0 : 0.08 + index * stagger,
-                }}
+                className="surface job-card elevate-card"
+                data-reveal
               >
-                <h2>{job.role}</h2>
+                <h3 className="job-card__role">{job.role}</h3>
                 <p className="job-card__meta">
                   {job.company} · {job.period}
                 </p>
@@ -48,7 +43,7 @@ export default function ExperiencePage() {
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
-              </motion.article>
+              </article>
             ))}
           </div>
         </div>

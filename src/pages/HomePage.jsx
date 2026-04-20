@@ -1,45 +1,55 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowRight, Linkedin, MapPin, Sparkles } from 'lucide-react';
+import { ArrowRight, Linkedin, Sparkles } from 'lucide-react';
 import Seo from '../components/site/Seo';
+import MagneticLink from '../components/site/MagneticLink';
+import FeaturedProjectsSwiper from '../components/projects/FeaturedProjectsSwiper';
 import { profile } from '../data/profile';
-import { useMotionSafe } from '../hooks/useMotionSafe';
+import { useHomeHeroIntro } from '../hooks/useHomeHeroIntro';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function HomePage() {
-  const { fadeUp, transition, stagger, reduce } = useMotionSafe();
+  const heroRef = useRef(null);
+  const lowerRef = useRef(null);
+
+  useHomeHeroIntro(heroRef);
+  useScrollReveal(lowerRef, { y: 22, stagger: 0.08, start: 'top 86%' });
 
   return (
     <>
-      <Seo title="Home" path="/" />
+      <Seo path="/" />
       <section className="hero">
         <div className="hero__inner container">
-          <motion.div
-            {...fadeUp}
-            transition={{ ...transition, delay: reduce ? 0 : 0.05 }}
-          >
-            <p className="kicker">
+          <div ref={heroRef} className="hero__intro">
+            <p className="kicker" data-hero-line>
               <Sparkles
                 size={14}
                 style={{ display: 'inline', verticalAlign: 'text-top', marginRight: 6 }}
                 aria-hidden
               />
-              Full-stack · Cloud · Leadership
+              {profile.siteName} · Full-stack · Cloud · Leadership
             </p>
-            <h1 className="h1">{profile.name}</h1>
-            <p className="lead">{profile.title}</p>
-            <div className="hero__meta">
-              <span className="pill" aria-label="Location">
-                <MapPin size={14} aria-hidden />
-                {profile.location}
+            <h1 className="h1" data-hero-line>
+              {profile.name}
+            </h1>
+            <p className="lead" data-hero-line>
+              {profile.title}
+            </p>
+            <div className="hero__meta" data-hero-line>
+              <span className="pill" aria-label="Site">
+                <Sparkles size={14} aria-hidden style={{ marginRight: 6 }} />
+                {profile.siteName}
               </span>
             </div>
-            <div className="hero__actions">
-              <Link className="btn btn-primary" to="/contact">
+            <div className="hero__actions" data-hero-actions>
+              <MagneticLink className="btn btn-primary" to="/contact">
                 Hire me <ArrowRight size={18} aria-hidden />
+              </MagneticLink>
+              <Link className="btn btn-ghost" to="/projects">
+                View projects
               </Link>
               <Link className="btn btn-ghost" to="/experience">
-                View experience
+                Experience
               </Link>
               <a
                 className="btn btn-ghost"
@@ -51,66 +61,53 @@ export default function HomePage() {
                 LinkedIn
               </a>
             </div>
-          </motion.div>
+          </div>
+        </div>
+      </section>
 
-          <div className="section-tight" style={{ marginTop: '2rem' }}>
-            <div className="grid-2">
-              <div className="surface" style={{ padding: '1.25rem' }}>
-                <h2 className="h2" style={{ fontSize: '1.1rem' }}>
-                  What I ship
-                </h2>
-                <p className="muted" style={{ margin: 0 }}>
-                  Secure, scalable systems on AWS, pragmatic microservices, and
-                  product engineering across Angular, React, NestJS, Flutter, and
-                  Ionic—with CI/CD and reliability treated as first-class product
-                  concerns.
-                </p>
-              </div>
-              <div className="surface" style={{ padding: '1.25rem' }}>
-                <h2 className="h2" style={{ fontSize: '1.1rem' }}>
-                  Highlights
-                </h2>
-                <ul className="muted" style={{ margin: 0, paddingLeft: '1.1rem' }}>
-                  <li>Technical leadership and architecture on cloud-native platforms.</li>
-                  <li>Healthcare SaaS delivery with measurable performance gains.</li>
-                  <li>Security-minded authentication, data protection, and delivery hygiene.</li>
-                </ul>
-              </div>
+      <FeaturedProjectsSwiper />
+
+      <section className="section-tight">
+        <div ref={lowerRef} className="container">
+          <div className="grid-2">
+            <div className="surface elevate-card" data-reveal style={{ padding: '1.25rem' }}>
+              <h2 className="h2" style={{ fontSize: '1.1rem' }}>
+                What I ship
+              </h2>
+              <p className="muted" style={{ margin: 0 }}>
+                Secure, scalable systems on AWS, pragmatic microservices, and product
+                engineering across Angular, React, NestJS, Flutter, and Ionic—with CI/CD
+                and reliability treated as first-class product concerns.
+              </p>
+            </div>
+            <div className="surface elevate-card" data-reveal style={{ padding: '1.25rem' }}>
+              <h2 className="h2" style={{ fontSize: '1.1rem' }}>
+                Highlights
+              </h2>
+              <ul className="muted" style={{ margin: 0, paddingLeft: '1.1rem' }}>
+                <li>Technical leadership and architecture on cloud-native platforms.</li>
+                <li>Healthcare SaaS delivery with measurable performance gains.</li>
+                <li>Security-minded authentication, data protection, and delivery hygiene.</li>
+              </ul>
             </div>
           </div>
 
-          <motion.div
-            className="section-tight"
-            initial={reduce ? false : { opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ ...transition, delay: reduce ? 0 : 0.35 }}
-          >
-            <div className="chips" aria-label="Core technologies">
-              {[
-                'AWS',
-                'Angular',
-                'NestJS',
-                'React',
-                'Node.js',
-                'Docker',
-                'CI/CD',
-                'MongoDB',
-              ].map((chip, i) => (
-                <motion.span
-                  key={chip}
-                  className="chip"
-                  initial={reduce ? false : { opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    ...transition,
-                    delay: reduce ? 0 : 0.35 + i * stagger,
-                  }}
-                >
-                  {chip}
-                </motion.span>
-              ))}
-            </div>
-          </motion.div>
+          <div className="chips chips--home" aria-label="Core technologies" style={{ marginTop: '1.25rem' }}>
+            {[
+              'AWS',
+              'Angular',
+              'NestJS',
+              'React',
+              'Node.js',
+              'Docker',
+              'CI/CD',
+              'MongoDB',
+            ].map((chip) => (
+              <span key={chip} className="chip" data-reveal>
+                {chip}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
     </>

@@ -9,15 +9,28 @@ export default function SiteFooter() {
     <footer className="site-footer" role="contentinfo">
       <div className="container site-footer__row">
         <div>
-          © {year} {profile.name}. Built for clarity, speed, and accessibility.
+          © {year} {profile.name} · {profile.siteName}. Built for clarity, speed,
+          and accessibility.
         </div>
         <div className="footer-links">
-          <Link to="/contact">Contact</Link>
-          <a href={profile.linkedInUrl} rel="noopener noreferrer" target="_blank">
+          <Link className="link-animated" to="/contact">
+            Contact
+          </Link>
+          <a
+            className="link-animated"
+            href={profile.linkedInUrl}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             LinkedIn
           </a>
-          <a href={profile.portfolioUrl} rel="noopener noreferrer" target="_blank">
-            Novavespera
+          <a
+            className="link-animated"
+            href={profile.portfolioUrl}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {profile.siteName}
           </a>
         </div>
       </div>

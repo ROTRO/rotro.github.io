@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Check, Copy, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import React, { useRef, useState } from 'react';
+import { Check, Copy, Linkedin, Mail, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Seo from '../components/site/Seo';
+import MagneticAnchor from '../components/site/MagneticAnchor';
 import { profile } from '../data/profile';
-import { useMotionSafe } from '../hooks/useMotionSafe';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function ContactPage() {
-  const { fadeUp, transition, reduce } = useMotionSafe();
+  const rootRef = useRef(null);
   const [copied, setCopied] = useState(null);
+
+  useScrollReveal(rootRef, { y: 24, stagger: 0.1, start: 'top 84%' });
 
   async function copyText(label, text) {
     try {
@@ -28,22 +30,18 @@ export default function ContactPage() {
         description="Contact Bilel Hedhli for full-stack engineering, technical leadership, and cloud architecture engagements."
       />
       <section className="section">
-        <div className="container">
-          <motion.div {...fadeUp} transition={transition}>
+        <div ref={rootRef} className="container">
+          <div data-reveal>
             <p className="kicker">Contact</p>
             <h1 className="h1">Let’s build something reliable</h1>
             <p className="lead">
               Reach out for consulting, technical leadership, or full-stack product
               work. I respond fastest to email and LinkedIn.
             </p>
-          </motion.div>
+          </div>
 
           <div className="contact-grid" style={{ marginTop: '2rem' }}>
-            <motion.div
-              {...fadeUp}
-              transition={{ ...transition, delay: reduce ? 0 : 0.06 }}
-              className="surface contact-card"
-            >
+            <div className="surface contact-card elevate-card" data-reveal>
               <ul className="contact-list">
                 <li>
                   <span className="contact-icon" aria-hidden>
@@ -51,7 +49,10 @@ export default function ContactPage() {
                   </span>
                   <div>
                     <div style={{ fontWeight: 600 }}>Email</div>
-                    <a className="link-inline" href={`mailto:${profile.email}`}>
+                    <a
+                      className="link-inline link-inline--animated"
+                      href={`mailto:${profile.email}`}
+                    >
                       {profile.email}
                     </a>
                     <div style={{ marginTop: 8 }}>
@@ -80,7 +81,10 @@ export default function ContactPage() {
                   </span>
                   <div>
                     <div style={{ fontWeight: 600 }}>Phone</div>
-                    <a className="link-inline" href={`tel:${profile.phoneTel}`}>
+                    <a
+                      className="link-inline link-inline--animated"
+                      href={`tel:${profile.phoneTel}`}
+                    >
                       {profile.phoneDisplay}
                     </a>
                     <div style={{ marginTop: 8 }}>
@@ -105,21 +109,12 @@ export default function ContactPage() {
                 </li>
                 <li>
                   <span className="contact-icon" aria-hidden>
-                    <MapPin size={18} />
-                  </span>
-                  <div>
-                    <div style={{ fontWeight: 600 }}>Location</div>
-                    <div className="muted">{profile.location}</div>
-                  </div>
-                </li>
-                <li>
-                  <span className="contact-icon" aria-hidden>
                     <Linkedin size={18} />
                   </span>
                   <div>
                     <div style={{ fontWeight: 600 }}>LinkedIn</div>
                     <a
-                      className="link-inline"
+                      className="link-inline link-inline--animated"
                       href={profile.linkedInUrl}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -129,41 +124,38 @@ export default function ContactPage() {
                   </div>
                 </li>
               </ul>
-            </motion.div>
+            </div>
 
-            <motion.div
-              {...fadeUp}
-              transition={{ ...transition, delay: reduce ? 0 : 0.12 }}
-              className="surface contact-card"
-            >
+            <div className="surface contact-card elevate-card" data-reveal>
               <h2 className="h2" style={{ fontSize: '1.1rem' }}>
-                Portfolio site
+                {profile.siteName}
               </h2>
               <p className="muted">
-                For a broader view of positioning and selected work, visit Novavespera.
+                For a broader view of positioning and selected work, visit{' '}
+                {profile.siteName}.
               </p>
-              <a
+              <MagneticAnchor
                 className="btn btn-primary"
                 style={{ width: 'fit-content' }}
                 href={profile.portfolioUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Open novavespera.pro
-              </a>
+                Visit {profile.siteName}
+              </MagneticAnchor>
               <div className="divider" />
               <p className="muted" style={{ margin: 0 }}>
                 Prefer structure first? Review{' '}
-                <Link className="link-inline" to="/experience">
+                <Link className="link-inline link-inline--animated" to="/experience">
                   experience
                 </Link>{' '}
                 and{' '}
-                <Link className="link-inline" to="/skills">
+                <Link className="link-inline link-inline--animated" to="/skills">
                   skills
                 </Link>{' '}
                 before reaching out.
               </p>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

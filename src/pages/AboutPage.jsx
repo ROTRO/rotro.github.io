@@ -1,11 +1,11 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
 import Seo from '../components/site/Seo';
 import { profile } from '../data/profile';
-import { useMotionSafe } from '../hooks/useMotionSafe';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function AboutPage() {
-  const { fadeUp, transition, reduce } = useMotionSafe();
+  const rootRef = useRef(null);
+  useScrollReveal(rootRef, { y: 24, stagger: 0.1, start: 'top 84%' });
 
   return (
     <>
@@ -15,14 +15,14 @@ export default function AboutPage() {
         description="Background, focus areas, and how Bilel Hedhli approaches engineering leadership and delivery."
       />
       <section className="section">
-        <div className="container grid-2">
-          <motion.div {...fadeUp} transition={transition}>
+        <div ref={rootRef} className="container grid-2">
+          <div data-reveal>
             <p className="kicker">About</p>
             <h1 className="h1">Engineering with ownership</h1>
             <p className="lead">
-              I am a Tunis-based full-stack engineer and technical lead who designs
-              and ships cloud systems end-to-end—then stays close to production
-              reality: reliability, security, and team velocity.
+              I am a full-stack engineer and technical lead who designs and ships
+              cloud systems end-to-end—then stays close to production reality:
+              reliability, security, and team velocity.
             </p>
             <p className="muted">
               My work spans AWS architectures, microservices, and modern web and
@@ -36,12 +36,11 @@ export default function AboutPage() {
               efforts, aligned delivery with business risk, and championed security
               practices across authentication and data handling.
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            {...fadeUp}
-            transition={{ ...transition, delay: reduce ? 0 : 0.08 }}
-            className="surface"
+          <div
+            data-reveal
+            className="surface elevate-card"
             style={{ padding: '1.25rem', overflow: 'hidden' }}
           >
             <img
@@ -59,9 +58,9 @@ export default function AboutPage() {
               }}
             />
             <p className="muted" style={{ marginTop: '0.75rem', fontSize: '0.9rem' }}>
-              {profile.name} — {profile.location}
+              {profile.name} · {profile.siteName}
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
     </>

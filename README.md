@@ -9,7 +9,7 @@
 
 - 🌱 I’m currently learning **React, Vue and Symphony...**
 
-- 👨‍💻 All of my projects are available at [https://rotro.github.io/Portfolio](https://rotro.github.io/Portfolio)
+- 👨‍💻 Portfolio: [https://novavespera.pro/](https://novavespera.pro/)
 
 - 💬 Ask me about **Angular, Ionic, and Java**
 
