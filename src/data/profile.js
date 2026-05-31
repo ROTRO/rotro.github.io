@@ -1,21 +1,19 @@
-const SITE_ORIGIN = (
-  process.env.REACT_APP_CANONICAL_ORIGIN || 'https://novavespera.pro'
-).replace(/\/+$/, '');
-
 export const profile = {
   name: 'Bilel Hedhli',
-  title:
-    'Full-Stack Engineer | Technical Lead | Cloud Solutions Specialist',
+  title: 'Full-Stack Engineer | Technical Lead | Cloud Solutions Specialist',
+  location: 'Tunis, Tunisia',
+  timezone: 'UTC+1',
   email: 'bilelhedhli@gmail.com',
   phoneDisplay: '+216 51 531 353',
   phoneTel: '+21651531353',
-  /** Public site URL (trailing slash for mail/links). */
-  portfolioUrl: `${SITE_ORIGIN}/`,
+  portfolioUrl: 'https://novavespera.pro/',
   linkedInUrl: 'https://linkedin.com/in/bilel-hedhli',
-  siteName: 'Nova Vespera',
-  siteTitle: 'Nova Vespera | Bilel Hedhli',
+  githubUrl: 'https://rotro.github.io',
+  siteTitle: 'Bilel Hedhli — Full-Stack Engineer',
   siteDescription:
-    'Nova Vespera — portfolio of Bilel Hedhli: full-stack engineer, technical lead, and cloud solutions specialist building secure, scalable systems on AWS.',
-  /** Canonical / Open Graph base (no trailing slash). Never localhost. */
-  siteOrigin: SITE_ORIGIN,
+    'Full-stack engineer, technical lead, and cloud solutions specialist building secure, scalable systems on AWS.',
+  canonicalOrigin: 'https://rotro.github.io',
+  cvPdf: '/assets/Bilel-Hedhli-CV.pdf',
+  videoUrl:
+    'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_094145_4a271a6c-3869-4f1c-8aa7-aeb0cb227994.mp4',
 };
