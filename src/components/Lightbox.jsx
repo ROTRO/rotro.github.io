@@ -1,48 +1,32 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 
 /**
- * Global image lightbox. Populated dynamically via data-gallery attributes.
- * This component scans the DOM for [data-gallery] elements and builds groups.
+ * Global image lightbox. Scans DOM for [data-gallery] elements on each route change.
  */
 export default function Lightbox() {
-  const [groups, setGroups] = useState({});
   const [list, setList] = useState([]);
   const [cur, setCur] = useState(0);
   const [open, setOpen] = useState(false);
-
-  // Register gallery items from the DOM after mount
-  useEffect(() => {
-    const triggers = Array.from(document.querySelectorAll('[data-gallery]'));
-    const g = {};
-    triggers.forEach((t) => {
-      const key = t.getAttribute('data-gallery');
-      if (!g[key]) g[key] = [];
-      const img = t.querySelector('img');
-      g[key].push({
-        src: t.getAttribute('data-full') || (img ? img.src : ''),
-        cap: t.getAttribute('data-cap') || '',
-      });
-      t.style.cursor = 'zoom-in';
-    });
-    setGroups(g);
-  }, []);
+  const groupsRef = useRef({});
+  const pathname = useLocation().pathname;
 
   const show = useCallback(
     (i) => {
       if (list.length === 0) return;
-      setCur((i + list.length) % list.length);
+      setCur((prev) => (i + list.length) % list.length);
     },
     [list.length]
   );
 
   const openLightbox = useCallback(
     (g, i) => {
-      setList(groups[g] || []);
+      setList(groupsRef.current[g] || []);
       setCur(i);
       setOpen(true);
       document.body.style.overflow = 'hidden';
     },
-    [groups]
+    []
   );
 
   const close = useCallback(() => {
@@ -50,27 +34,60 @@ export default function Lightbox() {
     document.body.style.overflow = '';
   }, []);
 
-  // Attach click handlers
+  const handlersCleanupRef = useRef(null);
+
+  // Re-scan DOM and attach click handlers on route change
   useEffect(() => {
-    const triggers = Array.from(document.querySelectorAll('[data-gallery]'));
-    const handlers = [];
+    // Clean up previous handlers
+    if (handlersCleanupRef.current) {
+      handlersCleanupRef.current();
+      handlersCleanupRef.current = null;
+    }
 
-    const groupCounters = {};
+    // Small delay to let the DOM render after route change
+    const timer = setTimeout(() => {
+      const triggers = Array.from(document.querySelectorAll('[data-gallery]'));
+      const g = {};
+      const handlers = [];
+      const groupCounters = {};
 
-    triggers.forEach((t) => {
-      const g = t.getAttribute('data-gallery');
-      if (!groupCounters[g]) groupCounters[g] = 0;
-      const idx = groupCounters[g]++;
+      triggers.forEach((t) => {
+        const key = t.getAttribute('data-gallery');
+        if (!g[key]) g[key] = [];
+        const img = t.querySelector('img');
+        g[key].push({
+          src: t.getAttribute('data-full') || (img ? img.src : ''),
+          cap: t.getAttribute('data-cap') || '',
+        });
+        t.style.cursor = 'zoom-in';
 
-      const handler = () => openLightbox(g, idx);
-      t.addEventListener('click', handler);
-      handlers.push({ el: t, handler });
-    });
+        if (!groupCounters[key]) groupCounters[key] = 0;
+        const idx = groupCounters[key]++;
+
+        const handler = (e) => {
+          e.preventDefault();
+          openLightbox(key, idx);
+        };
+        t.addEventListener('click', handler);
+        handlers.push({ el: t, handler });
+      });
+
+      groupsRef.current = g;
+
+      // Store cleanup for next run
+      handlersCleanupRef.current = () => {
+        handlers.forEach(({ el, handler }) => el.removeEventListener('click', handler));
+      };
+    }, 100);
 
     return () => {
-      handlers.forEach(({ el, handler }) => el.removeEventListener('click', handler));
+      clearTimeout(timer);
+      if (handlersCleanupRef.current) {
+        handlersCleanupRef.current();
+        handlersCleanupRef.current = null;
+      }
     };
-  }, [groups, openLightbox]);
+  }, [pathname, openLightbox]);
 
   // Keyboard navigation
   useEffect(() => {

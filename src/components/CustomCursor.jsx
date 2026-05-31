@@ -1,8 +1,9 @@
 import { useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 
 /**
  * Custom cursor — dot + ring that follows the mouse.
- * Only renders on devices with fine pointer.
+ * Rendered via portal to document.body to escape stacking contexts.
  */
 export default function CustomCursor() {
   const dotRef = useRef(null);
@@ -19,7 +20,10 @@ export default function CustomCursor() {
     const ring = ringRef.current;
     if (!dot || !ring) return;
 
+    // Position cursor at center initially
     pos.current = { mx: innerWidth / 2, my: innerHeight / 2, rx: innerWidth / 2, ry: innerHeight / 2 };
+    dot.style.transform = `translate(${innerWidth / 2}px,${innerHeight / 2}px) translate(-50%,-50%)`;
+    ring.style.transform = `translate(${innerWidth / 2}px,${innerHeight / 2}px) translate(-50%,-50%)`;
 
     const onMove = (e) => {
       pos.current.mx = e.clientX;
@@ -57,10 +61,11 @@ export default function CustomCursor() {
     };
   }, []);
 
-  return (
+  return createPortal(
     <>
       <div ref={dotRef} className="cursor" />
       <div ref={ringRef} className="cursor-ring" />
-    </>
+    </>,
+    document.body
   );
 }
