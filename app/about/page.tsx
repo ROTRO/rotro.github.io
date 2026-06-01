@@ -30,8 +30,7 @@ export default function AboutPage() {
           <div className="wrap">
             <div className="about-grid">
               <div className="ph headshot ticks" data-reveal>
-                <span className="ph__label">headshot · 4:5</span>
-                <span className="corner">drop image here</span>
+                <span className="corner"></span>
               </div>
               <div className="about-body" data-reveal data-reveal-delay="1">
                 <p>

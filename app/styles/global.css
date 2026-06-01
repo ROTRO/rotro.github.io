@@ -326,8 +326,7 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -0.02em; line-height: 1.05; margi
 /* image placeholder */
 .ph {
   position: relative;
-  background:
-    repeating-linear-gradient(135deg, var(--bg-2) 0 10px, var(--bg-1) 10px 20px);
+  background: url('https://avatars.githubusercontent.com/u/44240220?v=4') no-repeat center center;
   border: 1px solid var(--border);
   display: grid; place-items: center;
   overflow: hidden;
