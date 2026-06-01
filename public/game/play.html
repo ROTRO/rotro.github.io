@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Deploy Run</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #070a10; --bg-1: #0d1219; --panel: #0f151e; --border: #1a222d; --border-1: #28323f;
+    --text: #e8eff6; --muted: #8a97a6; --faint: #5a6675; --accent: #2dd4bf; --accent-d: #159e8c;
+    --gold: #e8b339; --danger: #e5484d;
+    --sans: 'Space Grotesk', system-ui, sans-serif; --mono: 'IBM Plex Mono', monospace;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: transparent; color: var(--text); font-family: var(--sans); min-height: 100%; }
+  body {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    min-height: 100vh; padding: clamp(0.5rem, 2vw, 1rem); gap: 0.8rem;
+  }
+
+  .dr-frame {
+    position: relative; width: min(100%, 980px);
+    border: 1px solid var(--border-1); background: #05080d;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(45,212,191,0.04);
+    overflow: hidden;
+  }
+  .dr-hud {
+    position: absolute; top: 0; left: 0; right: 0; z-index: 5;
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    padding: 0.7rem 0.9rem; pointer-events: none;
+    background: linear-gradient(180deg, rgba(5,8,13,0.82), transparent);
+    font-family: var(--mono);
+  }
+  .dr-hud .grp { display: flex; align-items: center; gap: 0.5rem; }
+  .dr-pill { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.74rem; letter-spacing: 0.06em; color: var(--text); border: 1px solid var(--border-1); background: rgba(8,12,18,0.6); padding: 0.3rem 0.6rem; }
+  .dr-pill .k { color: var(--accent); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; }
+  #dr-hearts { display: flex; gap: 3px; }
+  .dr-heart { width: 18px; height: 18px; image-rendering: pixelated; transition: opacity 0.2s var(--ease); }
+  .dr-status { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+
+  .dr-progwrap { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: rgba(255,255,255,0.06); z-index: 5; }
+  #dr-progress { height: 100%; width: 0; background: linear-gradient(90deg, var(--accent-d), var(--accent)); box-shadow: 0 0 10px var(--accent); transition: width 0.1s linear; }
+
+  #dr-canvas { display: block; width: 100%; height: auto; image-rendering: pixelated; image-rendering: crisp-edges; background: #070a10; }
+
+  .dr-ov {
+    position: absolute; inset: 0; z-index: 10; display: none;
+    flex-direction: column; align-items: center; justify-content: center; text-align: center;
+    padding: 2rem; gap: 0.8rem;
+    background: radial-gradient(circle at 50% 40%, rgba(7,10,16,0.86), rgba(5,8,13,0.96));
+    -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+  }
+  .dr-ov.on { display: flex; opacity: 1; animation: ovin 0.3s var(--ease) both; }
+  @keyframes ovin { from { opacity: 0; } to { opacity: 1; } }
+  .dr-eyebrow { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+  .dr-ov h1 { font-size: clamp(2.2rem, 7vw, 4rem); font-weight: 600; letter-spacing: -0.04em; line-height: 0.95; }
+  .dr-ov h2 { font-size: clamp(1.8rem, 6vw, 3rem); font-weight: 600; letter-spacing: -0.03em; }
+  .dr-ov p { color: var(--muted); max-width: 42ch; line-height: 1.6; font-size: 0.98rem; }
+  .dr-ov h2.win { color: var(--accent); }
+  .dr-ov h2.lose { color: var(--danger); }
+
+  .dr-btn {
+    margin-top: 0.6rem; font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500;
+    background: var(--accent); color: #05201c; border: none; padding: 0.85rem 1.6rem; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 0.6rem; transition: transform 0.2s var(--ease), background 0.2s var(--ease);
+  }
+  .dr-btn:hover { background: var(--accent-d); transform: translateY(-2px); }
+
+  .dr-legend { display: flex; flex-wrap: wrap; gap: 0.5rem 1.2rem; justify-content: center; margin-top: 0.8rem; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.04em; color: var(--faint); }
+  .dr-legend b { color: var(--text); font-weight: 500; }
+  .dr-key { display: inline-block; border: 1px solid var(--border-1); padding: 0.05rem 0.4rem; color: var(--text); border-radius: 3px; margin-right: 0.3rem; }
+  .dr-stats { display: flex; gap: 1.4rem; flex-wrap: wrap; justify-content: center; margin: 0.4rem 0 0.2rem; font-family: var(--mono); font-size: 0.82rem; color: var(--muted); }
+  .dr-stats b { color: var(--accent); font-size: 1.1rem; }
+  .dr-legend-icons { display: flex; gap: 1.4rem; flex-wrap: wrap; justify-content: center; margin-top: 0.5rem; font-family: var(--mono); font-size: 0.7rem; color: var(--muted); }
+  .dr-legend-icons span { display: inline-flex; align-items: center; gap: 0.4rem; }
+  .dr-dot { width: 10px; height: 10px; display: inline-block; }
+
+  .dr-touch { width: min(100%, 980px); display: none; justify-content: space-between; margin-top: 0.2rem; gap: 0.8rem; }
+  .dr-touch .pad { display: flex; gap: 0.6rem; }
+  .dr-touch button {
+    width: 64px; height: 64px; border: 1px solid var(--border-1); background: var(--panel); color: var(--text);
+    font-size: 1.4rem; border-radius: 12px; -webkit-user-select: none; user-select: none; touch-action: none;
+  }
+  .dr-touch button:active { background: var(--accent); color: #05201c; }
+  .dr-touch button.jump { width: 86px; }
+  @media (pointer: coarse) { .dr-touch { display: flex; } }
+</style>
+</head>
+<body>
+  <div class="dr-frame" id="dr-game">
+    <div class="dr-hud">
+      <div class="grp">
+        <span class="dr-pill"><span class="k">Commits</span><span id="dr-commits">0 / 0</span></span>
+        <span class="dr-pill"><span class="k">Build</span><span id="dr-hearts"></span></span>
+      </div>
+      <span class="dr-status" id="dr-status">ready</span>
+    </div>
+
+    <canvas id="dr-canvas"></canvas>
+    <div class="dr-progwrap"><div id="dr-progress"></div></div>
+
+    <div class="dr-ov on" id="dr-start">
+      <span class="dr-eyebrow">Bilel Hedhli · easter egg</span>
+      <h1>DEPLOY RUN</h1>
+      <p>Run right, collect <b style="color:var(--accent)">commits</b>, stomp <b style="color:var(--danger)">bugs</b>, grab <b style="color:var(--gold)">coffee</b> for a caffeinated shield — and reach the flag to <b style="color:var(--accent)">ship to production</b>.</p>
+      <div class="dr-legend-icons">
+        <span><i class="dr-dot" style="background:#2dd4bf"></i> commit</span>
+        <span><i class="dr-dot" style="background:#e5484d"></i> bug</span>
+        <span><i class="dr-dot" style="background:#f4efe6"></i> coffee</span>
+      </div>
+      <button class="dr-btn" data-start>▶ Press Space to start</button>
+      <div class="dr-legend">
+        <span><span class="dr-key">←</span><span class="dr-key">→</span> / <span class="dr-key">A</span><span class="dr-key">D</span> <b>move</b></span>
+        <span><span class="dr-key">Space</span> / <span class="dr-key">W</span> <b>jump</b></span>
+        <span><span class="dr-key">R</span> <b>restart</b></span>
+      </div>
+    </div>
+
+    <div class="dr-ov" id="dr-win">
+      <span class="dr-eyebrow">pipeline green</span>
+      <h2 class="win">DEPLOYED ✓</h2>
+      <p>Shipped to production with zero downtime. Nice work.</p>
+      <div class="dr-stats" id="dr-win-stats"></div>
+      <button class="dr-btn" data-start>↻ Run it again</button>
+    </div>
+
+    <div class="dr-ov" id="dr-lose">
+      <span class="dr-eyebrow">pipeline red</span>
+      <h2 class="lose">BUILD FAILED</h2>
+      <p>The build broke before it reached prod. Roll back and try again.</p>
+      <button class="dr-btn" data-start>↻ Retry deploy</button>
+    </div>
+  </div>
+
+  <div class="dr-touch">
+    <div class="pad">
+      <button data-btn="left" aria-label="Move left">◀</button>
+      <button data-btn="right" aria-label="Move right">▶</button>
+    </div>
+    <button class="jump" data-btn="jump" aria-label="Jump">JUMP</button>
+  </div>
+
+  <script src="./sprites.js"></script>
+  <script src="./game.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      window.DeployRun.mount(document.getElementById('dr-game'));
+    });
+  </script>
+</body>
+</html>

@@ -1,31 +1,122 @@
-<h1 align="center">Hi 👋, I'm Bilel Hedhli</h1>
-<h3 align="center">A passionate Full-stack developer from Tunisia</h3>
+# Nova Vespera — Bilel Hedhli
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=rotro&label=Profile%20views&color=0e75b6&style=flat" alt="rotro" /> </p>
+Personal portfolio. **Next.js 14 (App Router) + TypeScript**, with server-rendered
+SEO (Metadata API + JSON-LD), self-hosted Google Fonts via `next/font`, and a
+playable canvas mini-game at `/play`.
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=rotro" alt="rotro" /></a> </p>
+---
 
-- 🔭 I’m currently working on **I.P.A.C.S.S**
+## Quick start
 
-- 🌱 I’m currently learning **React, Vue and Symphony...**
+```bash
+npm install
+npm run dev        # local dev server  → http://localhost:3000
+npm run build      # production build
+npm run start      # serve the production build
+```
 
-- 👨‍💻 Portfolio: [https://novavespera.pro/](https://novavespera.pro/)
+> Requires Node 18.18+ (Node 20 LTS recommended).
 
-- 💬 Ask me about **Angular, Ionic, and Java**
+---
 
-- 📫 How to reach me **bilelhedhli@gmail.com**
+## Deploy to Vercel
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://instagram.com/bilel___hedhli" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="bilel___hedhli" height="30" width="40" /></a>
-</p>
+Next.js is Vercel's framework — zero config.
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://developer.android.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original-wordmark.svg" alt="android" width="40" height="40"/> </a> <a href="https://angular.io" target="_blank" rel="noreferrer"> <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="40" height="40"/> </a> <a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a> <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> <a href="https://www.chartjs.org" target="_blank" rel="noreferrer"> <img src="https://www.chartjs.org/media/logo-title.svg" alt="chartjs" width="40" height="40"/> </a> <a href="https://www.w3schools.com/cs/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.cypress.io" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/6e46ec1fc23b60c8fd0d2f2ff46db82e16dbd75f/icons/cypress.svg" alt="cypress" width="40" height="40"/> </a> <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/> </a> <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://graphql.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/graphql/graphql-icon.svg" alt="graphql" width="40" height="40"/> </a> <a href="https://heroku.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg" alt="heroku" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://ionicframework.com" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Ionic_Logo.svg" alt="ionic" width="40" height="40"/> </a> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://www.oracle.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/oracle/oracle-original.svg" alt="oracle" width="40" height="40"/> </a> <a href="https://www.photoshop.com/en" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/photoshop/photoshop-line.svg" alt="photoshop" width="40" height="40"/> </a> <a href="https://www.php.net" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="php" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://sass-lang.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" alt="sass" width="40" height="40"/> </a> <a href="https://spring.io/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="spring" width="40" height="40"/> </a> <a href="https://www.sqlite.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="sqlite" width="40" height="40"/> </a> <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a> <a href="https://www.adobe.com/products/xd.html" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/adobe-xd.svg" alt="xd" width="40" height="40"/> </a> </p>
+**Git (recommended)**
+1. Push this folder to a GitHub repo.
+2. Vercel → **New Project → Import** the repo. Framework preset **Next.js** is
+   auto-detected. **Deploy**.
+3. Add your domain (`novavespera.pro`) under **Project → Settings → Domains**.
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=rotro&show_icons=true&locale=en&layout=compact" alt="rotro" /></p>
+**CLI**
+```bash
+npm i -g vercel
+vercel          # preview
+vercel --prod   # production
+```
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=rotro&show_icons=true&locale=en" alt="rotro" /></p>
+---
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=rotro&" alt="rotro" /></p>
+## Structure
 
+```
+app/
+  layout.tsx          # root: <html>, fonts, global CSS, default metadata, SiteChrome
+  page.tsx            # Home (/)
+  about/page.tsx
+  experience/page.tsx
+  projects/page.tsx   # renders the client <Carousel>
+  contact/page.tsx    # renders the client <ContactForm>
+  play/page.tsx       # Deploy Run game (embeds /public/game/play.html)
+  not-found.tsx       # 404
+  sitemap.ts          # → /sitemap.xml
+  robots.ts           # → /robots.txt
+  manifest.ts         # → /manifest.webmanifest
+  styles/             # global.css, pages.css, showcase.css
+components/           # client + shared components
+  SiteChrome, Header, Footer, Brand, Cursor, ScrollProgress, SectionDots,
+  Carousel, CaseModal, ContactForm, JsonLd, usePageEffects
+lib/
+  projects.ts         # typed project catalogue (carousel + JSON-LD source)
+  experience.ts       # typed work history (timeline)
+  site.ts             # site constants, nav, socials, SITE_URL
+  structuredData.ts   # JSON-LD builders: Person / WebSite / ItemList
+  types.ts
+public/
+  assets/             # project screenshots, CV
+  game/               # Deploy Run — sprites.js, game.js, play.html (the game iframe)
+  og-image.png        # 1200×630 social card — REPLACE with a final design when ready
+  favicon.svg
+```
+
+### How rendering works
+
+Pages are **server components** that export `metadata` (so titles, descriptions,
+canonical URLs, OG/Twitter tags, and JSON-LD are in the initial HTML — real SEO,
+not client-injected). Interactive bits (`Header`, `Carousel`, `ContactForm`, the
+cursor, etc.) are **client components**; they still server-render their initial
+HTML and then hydrate. The global reveal / magnetic / tilt effects live in
+`SiteChrome`, re-bound on every route change.
+
+---
+
+## The game — Deploy Run (`/play`)
+
+A career-themed Mario-style platformer: collect commits, stomp bugs, grab coffee
+for a caffeinated shield, reach the flag to ship to production. Pure HTML canvas —
+**no engine and no image files**; every sprite is drawn procedurally in
+`public/game/sprites.js`, the engine is `public/game/game.js`.
+
+It runs inside an `<iframe>` (`public/game/play.html`) so its global key listeners
+and animation loop stay fully isolated from React's lifecycle and are cleaned up
+automatically when you navigate away.
+
+To tweak difficulty, edit the tunables at the top of `public/game/game.js`
+(`GRAV`, `RUN`, `JUMP`, `ENEMY_SPD`, `COFFEE_TIME`…) or the level geometry in
+`buildLevel()`.
+
+---
+
+## SEO
+
+- **Per-route metadata** — each `page.tsx` exports `metadata` (title, description,
+  canonical, OG/Twitter). Defaults + `title.template` live in `app/layout.tsx`.
+- **JSON-LD** — `Person` + `WebSite` on Home, `Person` on About, project
+  `ItemList` on Projects (via `<JsonLd>` + `lib/structuredData.ts`).
+- **sitemap.xml / robots.txt / manifest** — generated by `app/sitemap.ts`,
+  `app/robots.ts`, `app/manifest.ts`.
+
+If the domain changes, update `SITE_URL` in `lib/site.ts` — everything else
+(canonical URLs, OG, sitemap, robots) derives from it.
+
+---
+
+## Things to finish
+
+- [ ] Replace `public/og-image.png` with a final 1200×630 share card.
+- [ ] Drop a real headshot into the About page (the placeholder slot).
+- [ ] Wire `components/ContactForm.tsx` to a real endpoint (Formspree, Resend, or
+      a Next route handler at `app/api/contact/route.ts`). It currently shows a
+      success state without sending.
+```

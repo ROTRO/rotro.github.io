@@ -1,22 +1,25 @@
 {
-  "name": "bilel-hedhli-portfolio",
-  "private": true,
+  "name": "nova-vespera",
   "version": "1.0.0",
-  "type": "module",
+  "private": true,
+  "description": "Bilel Hedhli — portfolio. Next.js (App Router) + TypeScript.",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
+    "next": "14.2.15",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.0"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@types/react": "^18.3.3",
+    "@types/node": "^20.14.0",
+    "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.1",
-    "vite": "^5.4.0"
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.15",
+    "typescript": "^5.6.2"
   }
 }

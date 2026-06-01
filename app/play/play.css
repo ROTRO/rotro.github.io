@@ -1,0 +1,50 @@
+/* /play — Deploy Run game wrapper */
+.play-wrap { padding: clamp(5.5rem, 10vw, 7rem) 0 clamp(2.5rem, 6vw, 4rem); }
+
+.play-head { display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: clamp(1.4rem, 3vw, 2.2rem); }
+.play-head .eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; }
+.play-head h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); font-weight: 500; letter-spacing: -0.04em; line-height: 0.98; }
+.play-head p { color: var(--muted); font-size: clamp(1rem, 1.5vw, 1.12rem); line-height: 1.7; max-width: 56ch; }
+
+.play-stage {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.play-stage__inner {
+  width: min(100%, 980px);
+  aspect-ratio: 1056 / 640;
+}
+.play-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  background: #05080d;
+}
+
+.play-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--faint);
+}
+.play-foot .keys { display: flex; flex-wrap: wrap; gap: 0.5rem 1.1rem; }
+.play-foot .keys b { color: var(--text); font-weight: 500; }
+.play-key { display: inline-block; border: 1px solid var(--border-1); padding: 0.05rem 0.4rem; color: var(--text); border-radius: 3px; margin-right: 0.25rem; }
+
+@media (pointer: coarse) {
+  .play-stage__inner { aspect-ratio: 1056 / 800; }
+}
+@media (max-width: 640px) {
+  .play-stage__inner { aspect-ratio: 1056 / 860; }
+}
