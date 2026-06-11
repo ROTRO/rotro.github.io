@@ -8,6 +8,7 @@ import ScrollProgress from './ScrollProgress';
 import SectionDots from './SectionDots';
 import ScrollFx from './ScrollFx';
 import SmoothScroll from './SmoothScroll';
+import Preloader from './Preloader';
 import { usePageEffects } from './usePageEffects';
 
 /**
@@ -31,6 +32,7 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
       <a className="skip-link" href="#main-content">
         Skip to content
       </a>
+      <Preloader />
       <ScrollProgress />
       <Header />
       {children}

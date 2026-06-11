@@ -111,8 +111,12 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="section" style={{ paddingBottom: 0 }} data-screen-label="Home — Stats">
+        <section className="section chapter" data-screen-label="Home — Stats">
+          <span className="chapter__ghost" aria-hidden="true">01</span>
           <div className="wrap">
+            <div className="sec-head">
+              <span className="sec-num">01 / BY THE NUMBERS</span>
+            </div>
             <div className="stats" data-reveal>
               <div className="stat">
                 <div className="stat__num"><span data-count="5">5</span><span className="suf">+</span></div>
@@ -134,11 +138,12 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="section" data-screen-label="Home — Now">
+        <section className="section chapter" data-screen-label="Home — Now">
+          <span className="chapter__ghost" aria-hidden="true">02</span>
           <div className="wrap">
             <div className="now">
               <div className="sec-head" style={{ margin: 0 }}>
-                <span className="sec-num">01 / FOCUS</span>
+                <span className="sec-num">02 / FOCUS</span>
                 <h2 className="h-sec" data-reveal>
                   What I&apos;m<br />doing now
                 </h2>
@@ -170,10 +175,11 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="section" style={{ paddingTop: 0 }} data-screen-label="Home — Featured">
+        <section className="section chapter" data-screen-label="Home — Featured">
+          <span className="chapter__ghost" aria-hidden="true">03</span>
           <div className="wrap">
             <div className="sec-head">
-              <span className="sec-num">02 / SELECTED WORK</span>
+              <span className="sec-num">03 / SELECTED WORK</span>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: '1rem', flexWrap: 'wrap' }}>
                 <h2 className="h-sec" data-reveal>
                   Things I&apos;ve<br />built &amp; led
@@ -188,21 +194,25 @@ export default function HomePage() {
                 <div className="feat__top"><h3>Real-time healthcare SaaS</h3><span className="feat__no">01</span></div>
                 <p>End-to-end platform on Node.js, Angular &amp; AWS — 20% faster data retrieval, 15% lower latency, team of 10.</p>
                 <div className="chips"><span className="chip">Node.js</span><span className="chip">Angular</span><span className="chip">AWS</span><span className="chip">MongoDB</span></div>
+                <span className="door-cta">Enter <em>→</em></span>
               </Link>
               <Link className="feat__card" href="/projects/aquadeep">
                 <div className="feat__top"><h3>Cloud platforms &amp; reliability</h3><span className="feat__no">02</span></div>
                 <p>Technical leadership on AWS architectures and CI/CD modernization — balancing delivery speed with production stability.</p>
                 <div className="chips"><span className="chip">AWS</span><span className="chip">CI/CD</span><span className="chip">Leadership</span></div>
+                <span className="door-cta">Enter <em>→</em></span>
               </Link>
               <Link className="feat__card" href="/projects/rms">
                 <div className="feat__top"><h3>Enterprise full-stack delivery</h3><span className="feat__no">03</span></div>
                 <p>Product work across Angular, NestJS, Flutter &amp; Ionic with secure design patterns and microservices boundaries.</p>
                 <div className="chips"><span className="chip">Angular</span><span className="chip">NestJS</span><span className="chip">Flutter</span><span className="chip">Ionic</span></div>
+                <span className="door-cta">Enter <em>→</em></span>
               </Link>
               <Link className="feat__card" href="/projects/novavespera">
                 <div className="feat__top"><h3>Novavespera</h3><span className="feat__no">04</span></div>
                 <p>A focused portfolio &amp; brand presence built for clarity, performance and credibility with hiring teams.</p>
                 <div className="chips"><span className="chip">React</span><span className="chip">Performance</span><span className="chip">SEO</span></div>
+                <span className="door-cta">Enter <em>→</em></span>
               </Link>
             </div>
           </div>

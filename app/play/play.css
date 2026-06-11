@@ -6,24 +6,76 @@
 .play-head h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); font-weight: 500; letter-spacing: -0.04em; line-height: 0.98; }
 .play-head p { color: var(--muted); font-size: clamp(1rem, 1.5vw, 1.12rem); line-height: 1.7; max-width: 56ch; }
 
-.play-stage {
+/* ---------- Phaser stage ---------- */
+.game-shell {
   position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-.play-stage__inner {
   width: min(100%, 980px);
-  aspect-ratio: 1056 / 640;
-}
-.play-frame {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
+  margin-inline: auto;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--border-1);
   background: #05080d;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(45, 212, 191, 0.04);
+  overflow: hidden;
+  touch-action: none;
+}
+.game-host,
+.game-host canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  image-rendering: pixelated;
+}
+.game-shell--loading { display: grid; place-items: center; }
+.game-loading {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  animation: gpulse 1.2s ease-in-out infinite;
+}
+@keyframes gpulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+/* ---------- touch controls ---------- */
+.game-touch {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0.8rem;
+  pointer-events: none;
+}
+.game-touch__pad { display: flex; gap: 0.7rem; }
+.game-touch__btn {
+  pointer-events: auto;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(8, 12, 18, 0.45);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  color: rgba(255, 255, 255, 0.85);
+  display: grid;
+  place-items: center;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.game-touch__btn:active { background: rgba(45, 212, 191, 0.55); border-color: var(--accent); color: #04130f; }
+.game-touch__jump { width: 74px; height: 74px; }
+
+@media (max-width: 640px) {
+  .game-touch__btn { width: 54px; height: 54px; }
+  .game-touch__jump { width: 66px; height: 66px; }
 }
 
+/* ---------- footer legend ---------- */
 .play-foot {
   display: flex;
   align-items: center;
@@ -41,10 +93,3 @@
 .play-foot .keys { display: flex; flex-wrap: wrap; gap: 0.5rem 1.1rem; }
 .play-foot .keys b { color: var(--text); font-weight: 500; }
 .play-key { display: inline-block; border: 1px solid var(--border-1); padding: 0.05rem 0.4rem; color: var(--text); border-radius: 3px; margin-right: 0.25rem; }
-
-@media (pointer: coarse) {
-  .play-stage__inner { aspect-ratio: 1056 / 800; }
-}
-@media (max-width: 640px) {
-  .play-stage__inner { aspect-ratio: 1056 / 860; }
-}
