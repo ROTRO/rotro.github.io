@@ -1,6 +1,8 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
+import Link from 'next/link';
+import { motion } from 'motion/react';
 import type { Project } from '@/lib/types';
 
 const pad = (n: number) => (n < 10 ? '0' : '') + n;
@@ -12,31 +14,32 @@ interface CaseModalProps {
   onNavigate: (index: number) => void;
 }
 
-/** Full-height case-study panel for a single project, with prev/next + Esc. */
+/**
+ * Full-height case-study panel for a single project, with prev/next + Esc.
+ * Enter/exit animation is owned by motion (mount it inside <AnimatePresence>).
+ */
 export default function CaseModal({
   items,
   index,
   onRequestClose,
   onNavigate,
 }: CaseModalProps) {
-  const [show, setShow] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
   const total = items.length;
   const p = items[index];
 
-  const close = useCallback(() => {
-    setShow(false);
-    window.setTimeout(onRequestClose, 320);
-  }, [onRequestClose]);
+  const close = useCallback(() => onRequestClose(), [onRequestClose]);
 
-  // Enter animation + body scroll lock.
+  // Body scroll lock + move focus into the dialog, restore it on close.
   useEffect(() => {
-    const raf = requestAnimationFrame(() => setShow(true));
     const prevOverflow = document.body.style.overflow;
+    const prevFocus = document.activeElement as HTMLElement | null;
     document.body.style.overflow = 'hidden';
+    panelRef.current?.querySelector<HTMLElement>('.case__close')?.focus();
     return () => {
-      cancelAnimationFrame(raf);
       document.body.style.overflow = prevOverflow;
+      prevFocus?.focus();
     };
   }, []);
 
@@ -45,25 +48,57 @@ export default function CaseModal({
     if (scrollRef.current) scrollRef.current.scrollTop = 0;
   }, [index]);
 
-  // Keyboard nav.
+  // Keyboard nav + focus trap.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') close();
       else if (e.key === 'ArrowLeft') onNavigate((index - 1 + total) % total);
       else if (e.key === 'ArrowRight') onNavigate((index + 1) % total);
+      else if (e.key === 'Tab') {
+        const panel = panelRef.current;
+        if (!panel) return;
+        const focusables = Array.from(
+          panel.querySelectorAll<HTMLElement>(
+            'button, a[href], input, textarea, [tabindex]:not([tabindex="-1"])'
+          )
+        ).filter((el) => el.offsetParent !== null);
+        if (!focusables.length) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     };
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, [index, total, onNavigate, close]);
 
   return (
-    <div
-      className={`case${show ? ' on' : ''}`}
+    <motion.div
+      className="case"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, transition: { duration: 0.22, ease: 'easeIn' } }}
       onClick={(e) => {
         if (e.target === e.currentTarget) close();
       }}
     >
-      <div className="case__panel" role="dialog" aria-modal="true" aria-label={p.name}>
+      <motion.div
+        ref={panelRef}
+        className="case__panel"
+        initial={{ x: 72, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        exit={{ x: 56, opacity: 0 }}
+        transition={{ type: 'spring', stiffness: 300, damping: 34 }}
+        role="dialog"
+        aria-modal="true"
+        aria-label={p.name}
+      >
         <button className="case__close" aria-label="Close" onClick={close}>
           ✕
         </button>
@@ -104,7 +139,7 @@ export default function CaseModal({
                 ))}
               </div>
 
-              <div className="case__links">
+              <div className="case__links" style={{ display: 'flex', gap: '1.4rem', flexWrap: 'wrap', alignItems: 'center' }}>
                 {p.live ? (
                   <a
                     className="arrow-link"
@@ -117,6 +152,9 @@ export default function CaseModal({
                 ) : (
                   <span className="case__priv">Source private</span>
                 )}
+                <Link className="arrow-link" href={`/projects/${p.id}`}>
+                  Full case page <span className="arrow">→</span>
+                </Link>
               </div>
             </div>
 
@@ -150,7 +188,7 @@ export default function CaseModal({
             Next ›
           </button>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

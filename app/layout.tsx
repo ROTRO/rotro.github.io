@@ -44,14 +44,14 @@ export const metadata: Metadata = {
     description:
       'Building secure, scalable systems on AWS — from architecture to deployment.',
     url: SITE_URL,
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: SITE.personName }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: SITE.personName }],
   },
   twitter: {
     card: 'summary_large_image',
     title: `${SITE.personName} — ${SITE.role}`,
     description:
       'Building secure, scalable systems on AWS — from architecture to deployment.',
-    images: ['/og-image.png'],
+    images: ['/og-image.jpg'],
   },
   robots: { index: true, follow: true },
 };

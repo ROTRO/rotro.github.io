@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
+import HeroFx from '@/components/HeroFx';
 import JsonLd from '@/components/JsonLd';
 import { personSchema, websiteSchema } from '@/lib/structuredData';
 import { SITE } from '@/lib/site';
@@ -12,8 +13,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
 };
 
-const HERO_VIDEO =
-  'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_094145_4a271a6c-3869-4f1c-8aa7-aeb0cb227994.mp4';
+const HERO_VIDEO = '/assets/hero.mp4';
+const HERO_POSTER = '/assets/hero-poster.jpg';
 
 export default function HomePage() {
   return (
@@ -29,9 +30,11 @@ export default function HomePage() {
             loop
             playsInline
             preload="auto"
+            poster={HERO_POSTER}
             src={HERO_VIDEO}
           />
           <div className="cine__blur" />
+          <HeroFx />
 
           <div className="cine__inner">
             <div className="cine__row">
@@ -108,6 +111,29 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section className="section" style={{ paddingBottom: 0 }} data-screen-label="Home — Stats">
+          <div className="wrap">
+            <div className="stats" data-reveal>
+              <div className="stat">
+                <div className="stat__num"><span data-count="5">5</span><span className="suf">+</span></div>
+                <div className="stat__lbl">Years of experience</div>
+              </div>
+              <div className="stat">
+                <div className="stat__num"><span data-count="10">10</span></div>
+                <div className="stat__lbl">Engineers led</div>
+              </div>
+              <div className="stat">
+                <div className="stat__num"><span data-count="30">30</span><span className="suf">%</span></div>
+                <div className="stat__lbl">Faster deployments via CI/CD</div>
+              </div>
+              <div className="stat">
+                <div className="stat__num"><span data-count="25">25</span><span className="suf">%</span></div>
+                <div className="stat__lbl">Team productivity gain</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="section" data-screen-label="Home — Now">
           <div className="wrap">
             <div className="now">
@@ -157,23 +183,23 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-            <div className="feat" data-reveal>
-              <Link className="feat__card" href="/projects">
+            <div className="feat">
+              <Link className="feat__card" href="/projects/esteps">
                 <div className="feat__top"><h3>Real-time healthcare SaaS</h3><span className="feat__no">01</span></div>
                 <p>End-to-end platform on Node.js, Angular &amp; AWS — 20% faster data retrieval, 15% lower latency, team of 10.</p>
                 <div className="chips"><span className="chip">Node.js</span><span className="chip">Angular</span><span className="chip">AWS</span><span className="chip">MongoDB</span></div>
               </Link>
-              <Link className="feat__card" href="/projects">
+              <Link className="feat__card" href="/projects/aquadeep">
                 <div className="feat__top"><h3>Cloud platforms &amp; reliability</h3><span className="feat__no">02</span></div>
                 <p>Technical leadership on AWS architectures and CI/CD modernization — balancing delivery speed with production stability.</p>
                 <div className="chips"><span className="chip">AWS</span><span className="chip">CI/CD</span><span className="chip">Leadership</span></div>
               </Link>
-              <Link className="feat__card" href="/projects">
+              <Link className="feat__card" href="/projects/rms">
                 <div className="feat__top"><h3>Enterprise full-stack delivery</h3><span className="feat__no">03</span></div>
                 <p>Product work across Angular, NestJS, Flutter &amp; Ionic with secure design patterns and microservices boundaries.</p>
                 <div className="chips"><span className="chip">Angular</span><span className="chip">NestJS</span><span className="chip">Flutter</span><span className="chip">Ionic</span></div>
               </Link>
-              <Link className="feat__card" href="/projects">
+              <Link className="feat__card" href="/projects/novavespera">
                 <div className="feat__top"><h3>Novavespera</h3><span className="feat__no">04</span></div>
                 <p>A focused portfolio &amp; brand presence built for clarity, performance and credibility with hiring teams.</p>
                 <div className="chips"><span className="chip">React</span><span className="chip">Performance</span><span className="chip">SEO</span></div>

@@ -31,8 +31,8 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+/* smooth scrolling is handled by Lenis; CSS smooth would fight it */
 html {
-  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -58,6 +58,7 @@ body::before {
     linear-gradient(var(--border) 1px, transparent 1px),
     linear-gradient(90deg, var(--border) 1px, transparent 1px);
   background-size: 64px 64px;
+  background-position: 0 var(--grid-y, 0px);
   -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 0%, transparent 75%);
           mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 0%, transparent 75%);
   opacity: 0.5;
@@ -72,6 +73,24 @@ button { font-family: inherit; }
   outline-offset: 3px;
   border-radius: 2px;
 }
+
+/* skip link: visually hidden until keyboard-focused */
+.skip-link {
+  position: fixed;
+  top: 0.6rem; left: 0.6rem;
+  z-index: 1000;
+  padding: 0.6rem 1rem;
+  background: var(--accent);
+  color: #04130f;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transform: translateY(-200%);
+  transition: transform 0.2s var(--ease);
+}
+.skip-link:focus-visible { transform: translateY(0); }
 
 ::selection { background: var(--accent); color: #04130f; }
 
@@ -326,7 +345,7 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -0.02em; line-height: 1.05; margi
 /* image placeholder */
 .ph {
   position: relative;
-  background: url('https://avatars.githubusercontent.com/u/44240220?v=4') no-repeat center center;
+  background: url('/assets/headshot.webp') no-repeat center center / cover;
   border: 1px solid var(--border);
   display: grid; place-items: center;
   overflow: hidden;

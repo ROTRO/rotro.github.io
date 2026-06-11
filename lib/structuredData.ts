@@ -11,7 +11,7 @@ export function personSchema(): Json {
     name: SITE.personName,
     alternateName: SITE.brandName,
     url: SITE_URL,
-    image: `${SITE_URL}/og-image.png`,
+    image: `${SITE_URL}/og-image.jpg`,
     jobTitle: 'Full-Stack Engineer & Technical Lead',
     email: `mailto:${SITE.email}`,
     telephone: SITE.phone,
@@ -63,7 +63,8 @@ export function projectsSchema(): Json {
         name: p.name,
         description: p.desc,
         keywords: p.stack.join(', '),
-        ...(p.live ? { url: p.live } : {}),
+        url: `${SITE_URL}/projects/${p.id}`,
+        ...(p.live ? { sameAs: p.live } : {}),
       },
     })),
   };

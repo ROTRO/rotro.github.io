@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { AnimatePresence } from 'motion/react';
 import type { Project } from '@/lib/types';
 import CaseModal from './CaseModal';
 
@@ -16,6 +17,7 @@ export default function Carousel({ items }: CarouselProps) {
   const slideRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const [active, setActive] = useState(0);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const urlSyncReady = useRef(false);
 
   const total = items.length;
 
@@ -44,6 +46,27 @@ export default function Carousel({ items }: CarouselProps) {
     const left = s.offsetLeft - (track.clientWidth - s.offsetWidth) / 2;
     track.scrollTo({ left, behavior: 'smooth' });
   }, []);
+
+  // Deep link: ?case=<id> opens that case study on load; the param is kept
+  // in sync (replaceState, so Back still leaves the page predictably).
+  useEffect(() => {
+    const id = new URLSearchParams(window.location.search).get('case');
+    const i = id ? items.findIndex((p) => p.id === id) : -1;
+    if (i >= 0) {
+      setOpenIndex(i);
+      requestAnimationFrame(() => scrollToIndex(i));
+    }
+    urlSyncReady.current = true;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (!urlSyncReady.current) return;
+    const url = new URL(window.location.href);
+    if (openIndex !== null) url.searchParams.set('case', items[openIndex].id);
+    else url.searchParams.delete('case');
+    window.history.replaceState(null, '', url);
+  }, [openIndex, items]);
 
   // Sync active index on scroll (debounced) + on resize.
   useEffect(() => {
@@ -183,14 +206,16 @@ export default function Carousel({ items }: CarouselProps) {
         <span className="car__hint">drag · click to open</span>
       </div>
 
-      {openIndex !== null && (
-        <CaseModal
-          items={items}
-          index={openIndex}
-          onRequestClose={() => setOpenIndex(null)}
-          onNavigate={(i) => setOpenIndex(i)}
-        />
-      )}
+      <AnimatePresence>
+        {openIndex !== null && (
+          <CaseModal
+            items={items}
+            index={openIndex}
+            onRequestClose={() => setOpenIndex(null)}
+            onNavigate={(i) => setOpenIndex(i)}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 }

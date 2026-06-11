@@ -66,7 +66,9 @@ export default function SectionDots() {
     if (!sec) return;
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const y = sec.getBoundingClientRect().top + window.pageYOffset - 60;
-    window.scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' });
+    const lenis = (window as Window & { __lenis?: { scrollTo: (y: number) => void } }).__lenis;
+    if (lenis && !reduce) lenis.scrollTo(y);
+    else window.scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' });
   };
 
   return (

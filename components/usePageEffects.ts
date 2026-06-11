@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { animate } from 'motion';
 
 /**
  * Re-applies the site's progressive-enhancement effects after each route
@@ -46,10 +47,14 @@ export function usePageEffects(key: string) {
             const r = el.getBoundingClientRect();
             const x = e.clientX - (r.left + r.width / 2);
             const y = e.clientY - (r.top + r.height / 2);
-            el.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
+            animate(
+              el,
+              { x: x * strength, y: y * strength },
+              { type: 'spring', stiffness: 380, damping: 28 }
+            );
           };
           const onLeave = () => {
-            el.style.transform = '';
+            animate(el, { x: 0, y: 0 }, { type: 'spring', stiffness: 220, damping: 16 });
           };
           el.addEventListener('mousemove', onMove);
           el.addEventListener('mouseleave', onLeave);

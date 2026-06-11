@@ -20,7 +20,9 @@ export default function ProjectsPage() {
       <main>
         <section className="page-intro" data-screen-label="Projects — Intro">
           <div className="wrap">
-            <span className="eyebrow" data-reveal>Selected work · 07</span>
+            <span className="eyebrow" data-reveal>
+              Selected work · {String(projects.length).padStart(2, '0')}
+            </span>
             <h1 className="display" data-reveal data-reveal-delay="1">
               Things I&apos;ve<br />built &amp; led.
             </h1>

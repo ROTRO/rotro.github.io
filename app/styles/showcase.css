@@ -229,6 +229,7 @@
 /* ============================================================
    case-study detail modal
    ============================================================ */
+/* enter/exit animation is driven by motion (CaseModal) — no CSS transitions here */
 .case {
   position: fixed;
   inset: 0;
@@ -239,11 +240,7 @@
   background: rgba(4,6,10,0.82);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
-  opacity: 0;
-  transition: opacity 0.3s var(--ease);
 }
-.case.on { opacity: 1; }
-.case[hidden] { display: none; }
 
 .case__panel {
   position: relative;
@@ -254,10 +251,7 @@
   display: flex;
   flex-direction: column;
   box-shadow: -30px 0 80px rgba(0,0,0,0.5);
-  transform: translateX(40px);
-  transition: transform 0.4s var(--ease);
 }
-.case.on .case__panel { transform: none; }
 
 .case__close {
   position: absolute;
@@ -442,13 +436,37 @@
   color: var(--faint);
 }
 
+/* ---------- standalone case page pager ---------- */
+.case-pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.case-pager__link { display: flex; flex-direction: column; gap: 0.3rem; }
+.case-pager__link--next { text-align: right; }
+.case-pager__link .k {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+  transition: color 0.2s var(--ease);
+}
+.case-pager__link .v { font-size: 1.05rem; font-weight: 500; transition: color 0.2s var(--ease); }
+.case-pager__link:hover .k,
+.case-pager__link:hover .v { color: var(--accent); }
+
 @media (max-width: 880px) {
   .case { justify-content: center; }
-  .case__panel { width: 100%; border-left: 0; transform: translateY(40px); }
-  .case.on .case__panel { transform: none; }
+  .case__panel { width: 100%; border-left: 0; }
   .case__gallery:has(.shot--phone) { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .slide, .slide__img, .case, .case__panel, .slide__cta { transition: none !important; }
+  .slide, .slide__img, .slide__cta { transition: none !important; }
 }

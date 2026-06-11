@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { SITE_URL } from '@/lib/site';
+import { projects } from '@/lib/projects';
 
 export const dynamic = 'force-static';
 
@@ -10,6 +11,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/about', priority: 0.8, freq: 'monthly' as const },
     { path: '/experience', priority: 0.8, freq: 'monthly' as const },
     { path: '/projects', priority: 0.9, freq: 'monthly' as const },
+    ...projects.map((p) => ({
+      path: `/projects/${p.id}`,
+      priority: 0.7,
+      freq: 'monthly' as const,
+    })),
     { path: '/contact', priority: 0.6, freq: 'yearly' as const },
     { path: '/play', priority: 0.5, freq: 'yearly' as const },
   ];

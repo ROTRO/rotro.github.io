@@ -73,7 +73,7 @@ export default function Footer({
         </div>
 
         <div className="foot__bar">
-          <span>© 2026 {SITE.personName}</span>
+          <span>© {new Date().getFullYear()} {SITE.personName}</span>
           <span>
             {SITE.location} · {SITE.timezone}
           </span>

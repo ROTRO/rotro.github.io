@@ -6,6 +6,8 @@ import Header from './Header';
 import Cursor from './Cursor';
 import ScrollProgress from './ScrollProgress';
 import SectionDots from './SectionDots';
+import ScrollFx from './ScrollFx';
+import SmoothScroll from './SmoothScroll';
 import { usePageEffects } from './usePageEffects';
 
 /**
@@ -19,18 +21,23 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
   const pathname = usePathname();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }, [pathname]);
 
   usePageEffects(pathname);
 
   return (
     <>
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
       <ScrollProgress />
       <Header />
       {children}
       <Cursor />
       <SectionDots />
+      <SmoothScroll pathname={pathname} />
+      <ScrollFx pathname={pathname} />
     </>
   );
 }

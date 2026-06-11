@@ -22,6 +22,13 @@
   -webkit-mask-image: linear-gradient(to top, #000 0%, transparent 45%);
           mask-image: linear-gradient(to top, #000 0%, transparent 45%);
 }
+.cine__fx {
+  position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  mix-blend-mode: screen;
+  -webkit-mask-image: linear-gradient(to top, #000 30%, transparent 90%);
+          mask-image: linear-gradient(to top, #000 30%, transparent 90%);
+}
+.cine__fx canvas { width: 100% !important; height: 100% !important; display: block; }
 .cine__inner { position: relative; z-index: 10; width: min(100% - 2 * var(--gut), var(--maxw)); margin-inline: auto; padding: 0 0 clamp(2.5rem, 6vw, 5rem); }
 .cine__row { display: flex; align-items: flex-end; justify-content: space-between; gap: 2.5rem; flex-wrap: wrap; }
 .cine__left { flex: 1; min-width: 300px; }

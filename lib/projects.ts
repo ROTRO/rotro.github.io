@@ -13,7 +13,7 @@ export const projects: Project[] = [
     live: null,
     name: 'Fit-Core',
     tagline: 'Cross-platform fitness & nutrition companion',
-    cover: '/assets/fitcore/home.png',
+    cover: '/assets/fitcore/home.webp',
     coverPos: 'top center',
     desc: 'A full fitness app designed and built end to end — guided health-profile onboarding with BMI & calorie targeting, AI-generated workout plans, and detailed nutrition tracking for calories, macros and water. Backed by Supabase with gamified streaks, XP and badges to keep training consistent.',
     feats: [
@@ -25,11 +25,11 @@ export const projects: Project[] = [
     stack: ['Angular 20', 'Ionic', 'Capacitor', 'Supabase', 'TypeScript', 'Chart.js'],
     shape: 'phone',
     gallery: [
-      { src: '/assets/fitcore/home.png', cap: 'Home dashboard' },
-      { src: '/assets/fitcore/workouts.png', cap: 'Workouts · AI generation' },
-      { src: '/assets/fitcore/nutrition.png', cap: 'Meals & water tracking' },
-      { src: '/assets/fitcore/calories.png', cap: 'Calories & macro targets' },
-      { src: '/assets/fitcore/onboarding.png', cap: 'Health-profile onboarding' },
+      { src: '/assets/fitcore/home.webp', cap: 'Home dashboard' },
+      { src: '/assets/fitcore/workouts.webp', cap: 'Workouts · AI generation' },
+      { src: '/assets/fitcore/nutrition.webp', cap: 'Meals & water tracking' },
+      { src: '/assets/fitcore/calories.webp', cap: 'Calories & macro targets' },
+      { src: '/assets/fitcore/onboarding.webp', cap: 'Health-profile onboarding' },
     ],
   },
   {
@@ -39,7 +39,7 @@ export const projects: Project[] = [
     live: null,
     name: 'Echo Art Studio',
     tagline: 'IBRAZIA — editorial luxury kimono storefront',
-    cover: '/assets/echo/hero.jpg',
+    cover: '/assets/echo/hero.webp',
     coverPos: 'center',
     desc: 'A high-end, editorial e-commerce concept for hand-woven kimono — built around a refined serif identity, “chapter”-based collections, and a slow, gallery-like browsing experience. Fully bilingual (EN/FR), with an adjustable product grid, filters, cart and product pages on a shadcn/ui component system.',
     feats: [
@@ -51,10 +51,10 @@ export const projects: Project[] = [
     stack: ['React 18', 'TypeScript', 'Vite', 'Tailwind', 'shadcn/ui', 'i18next', 'Firebase'],
     shape: 'web',
     gallery: [
-      { src: '/assets/echo/hero.jpg', cap: 'Hero — every gesture' },
-      { src: '/assets/echo/collections.jpg', cap: 'Collections — eight chapters' },
-      { src: '/assets/echo/grid1.jpg', cap: 'All Kimono — product grid' },
-      { src: '/assets/echo/grid2.jpg', cap: 'Chapters 05–08' },
+      { src: '/assets/echo/hero.webp', cap: 'Hero — every gesture' },
+      { src: '/assets/echo/collections.webp', cap: 'Collections — eight chapters' },
+      { src: '/assets/echo/grid1.webp', cap: 'All Kimono — product grid' },
+      { src: '/assets/echo/grid2.webp', cap: 'Chapters 05–08' },
     ],
   },
   {
@@ -64,7 +64,7 @@ export const projects: Project[] = [
     live: 'https://tanstack-start-app.eyatraining.workers.dev/',
     name: 'eya.',
     tagline: "Premium women's wellness & coaching platform",
-    cover: '/assets/eya/home.jpg',
+    cover: '/assets/eya/home.webp',
     coverPos: 'top center',
     desc: 'A full-stack, bilingual coaching brand for women — blending personal coaching, nutrition and an online académie into one editorial, high-end experience. Built on TanStack Start with a Supabase backend and deployed to the edge on Cloudflare Workers.',
     feats: [
@@ -76,11 +76,11 @@ export const projects: Project[] = [
     stack: ['TanStack Start', 'React 19', 'Tailwind v4', 'shadcn/ui', 'Supabase', 'Framer Motion', 'Cloudflare'],
     shape: 'web',
     gallery: [
-      { src: '/assets/eya/home.jpg', cap: 'Home — vous-même' },
-      { src: '/assets/eya/imc.jpg', cap: 'IMC — wellness tool' },
-      { src: '/assets/eya/academie.jpg', cap: 'Académie — online courses' },
-      { src: '/assets/eya/nutrition.jpg', cap: 'Nutrition & transformation' },
-      { src: '/assets/eya/contact.jpg', cap: 'Contact' },
+      { src: '/assets/eya/home.webp', cap: 'Home — vous-même' },
+      { src: '/assets/eya/imc.webp', cap: 'IMC — wellness tool' },
+      { src: '/assets/eya/academie.webp', cap: 'Académie — online courses' },
+      { src: '/assets/eya/nutrition.webp', cap: 'Nutrition & transformation' },
+      { src: '/assets/eya/contact.webp', cap: 'Contact' },
     ],
   },
   {
