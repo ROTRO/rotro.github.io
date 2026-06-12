@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Brand from './Brand';
+import SoundToggle from './SoundToggle';
 import { NAV } from '@/lib/site';
 
 /** Fixed top header: brand, primary nav (Next Link), status, mobile toggle. */
@@ -39,9 +40,12 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        <div className="hdr__status">
-          <span className="status-dot" />
-          <span>Available for work</span>
+        <div className="hdr__right">
+          <SoundToggle />
+          <div className="hdr__status">
+            <span className="status-dot" />
+            <span>Available for work</span>
+          </div>
         </div>
         <button
           className="nav-toggle"

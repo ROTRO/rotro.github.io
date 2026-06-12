@@ -69,11 +69,24 @@
 }
 .game-touch__btn:active { background: rgba(45, 212, 191, 0.55); border-color: var(--accent); color: #04130f; }
 .game-touch__jump { width: 74px; height: 74px; }
+.game-touch__dash { align-self: center; }
 
 @media (max-width: 640px) {
   .game-touch__btn { width: 54px; height: 54px; }
   .game-touch__jump { width: 66px; height: 66px; }
 }
+
+/* ---------- best run ---------- */
+.game-best {
+  width: min(100%, 980px);
+  margin: 0.8rem auto 0;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.game-best b { color: var(--accent); font-weight: 600; }
 
 /* ---------- footer legend ---------- */
 .play-foot {
