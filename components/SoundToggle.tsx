@@ -27,6 +27,13 @@ export default function SoundToggle() {
 
   useEffect(() => () => stopAmbient(), []);
 
+  // the command palette toggles sound via this event
+  useEffect(() => {
+    const onToggle = () => toggle();
+    window.addEventListener('nv:sound-toggle', onToggle);
+    return () => window.removeEventListener('nv:sound-toggle', onToggle);
+  });
+
   const toggle = () => {
     if (on) {
       stopAmbient();

@@ -9,6 +9,8 @@ import SectionDots from './SectionDots';
 import ScrollFx from './ScrollFx';
 import SmoothScroll from './SmoothScroll';
 import Preloader from './Preloader';
+import CommandPalette from './CommandPalette';
+import KonamiCode from './KonamiCode';
 import { usePageEffects } from './usePageEffects';
 
 /**
@@ -38,6 +40,8 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
       {children}
       <Cursor />
       <SectionDots />
+      <CommandPalette />
+      <KonamiCode />
       <SmoothScroll pathname={pathname} />
       <ScrollFx pathname={pathname} />
     </>

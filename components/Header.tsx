@@ -41,6 +41,15 @@ export default function Header() {
           ))}
         </nav>
         <div className="hdr__right">
+          <button
+            type="button"
+            className="cmdk-hint"
+            aria-label="Open command palette"
+            onClick={() => window.dispatchEvent(new CustomEvent('nv:cmdk'))}
+          >
+            <kbd>Ctrl</kbd>
+            <kbd>K</kbd>
+          </button>
           <SoundToggle />
           <div className="hdr__status">
             <span className="status-dot" />

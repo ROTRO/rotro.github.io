@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { NAV, SOCIALS, SITE } from '@/lib/site';
+import GameBadge from './GameBadge';
 
 interface FooterProps {
   /** Big closing headline; supports a manual line break via \n. */
@@ -77,6 +78,7 @@ export default function Footer({
           <span>
             {SITE.location} · {SITE.timezone}
           </span>
+          <GameBadge />
           <span>Full-Stack · Cloud · Leadership</span>
         </div>
       </div>

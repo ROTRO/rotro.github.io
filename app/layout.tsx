@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Space_Grotesk, IBM_Plex_Mono } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
 import { SITE, SITE_URL } from '@/lib/site';
 import SiteChrome from '@/components/SiteChrome';
 
@@ -71,6 +72,7 @@ export default function RootLayout({
     <html lang="en" className={`${spaceGrotesk.variable} ${plexMono.variable}`}>
       <body>
         <SiteChrome>{children}</SiteChrome>
+        <Analytics />
       </body>
     </html>
   );
