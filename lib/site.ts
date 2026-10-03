@@ -28,5 +28,5 @@ export const SOCIALS: SocialLink[] = [
   { label: 'Email', href: `mailto:${SITE.email}` },
   { label: 'LinkedIn', href: 'https://linkedin.com/in/bilel-hedhli', external: true },
   { label: 'novavespera.pro', href: 'https://novavespera.pro/', external: true },
-  { label: 'GitHub', href: 'https://rotro.github.io', external: true },
+  { label: 'GitHub', href: 'https://github.com/rotro', external: true },
 ];

@@ -38,6 +38,25 @@ vercel --prod   # production
 
 ---
 
+## Site versions (v1 / v2)
+
+Two designs live side by side:
+
+- **v1**: the original dark site, in `app/[locale]/(v1)/` (route group; its CSS and chrome load only there).
+- **v2**: the light studio redesign, in `app/[locale]/v2/` with components in `components/v2/` and styles in `app/styles/v2.css`.
+
+`NEXT_PUBLIC_SITE_VERSION` picks which one serves the public URLs (see `.env.example`):
+
+| Value | `/about`, `/fr/projects/x`, … | `/v2/*` |
+|---|---|---|
+| `v1` (default) | v1 | v2 preview, `noindex` |
+| `v2` | v2 (middleware rewrite) | 308 to the clean URL |
+
+Set it in `.env.local` locally, or in Vercel → Project → Settings → Environment Variables.
+It is inlined at build time, so **redeploy after changing it**.
+
+---
+
 ## Structure
 
 ```

@@ -40,7 +40,7 @@ const PAR_TIME_S = 200; // under par earns a time bonus on the final win
 const EF = 'entities';
 const PF = 'props';
 
-type FormKind = 'none' | 'coffee' | 'cloud' | 'turbo' | 'magnet';
+type FormKind = 'none' | 'coffee' | 'cloud' | 'turbo' | 'magnet' | 'flight' | 'fire' | 'frog';
 type PUKind = Exclude<FormKind, 'none'> | 'heart';
 
 const FORM_LABEL: Record<Exclude<FormKind, 'none'>, string> = {
@@ -48,12 +48,25 @@ const FORM_LABEL: Record<Exclude<FormKind, 'none'>, string> = {
   cloud: 'CLOUD — DOUBLE JUMP',
   turbo: 'TURBO',
   magnet: 'MAGNET',
+  flight: 'FLIGHT — GLIDE & FLAP',
+  fire: 'FIRE — BURN ON TOUCH',
+  frog: 'FROG — SUPER JUMP',
 };
 const FORM_TINT: Record<Exclude<FormKind, 'none'>, number> = {
   coffee: 0xffe08a,
   cloud: 0xbfe9ff,
   turbo: 0xfff06a,
   magnet: 0xe2b8ff,
+  flight: 0xf2c0a0,
+  fire: 0xff7a3c,
+  frog: 0x6fd6b0,
+};
+
+/** Forms that swap the player to a generated costume sprite (AI-made, Sunny-Land-matched). */
+const COSTUME: Partial<Record<FormKind, string>> = {
+  flight: 'form-flight',
+  fire: 'form-fire',
+  frog: 'form-frog',
 };
 
 /* ============================================================
@@ -113,6 +126,7 @@ const LEVELS: LevelDef[] = [
       ['turbo', 56, 1], ['turbo', 132, 1],
       ['magnet', 78, 2], ['magnet', 168, 2],
       ['heart', 102, 5], ['heart', 190, 3],
+      ['flight', 38, 3], ['fire', 110, 4], ['frog', 158, 3],
     ],
     trees: [[6, 8], [27, 8], [56, 8], [78, 8], [90, 8], [105, 7], [120, 8], [148, 8], [180, 8], [196, 8], [210, 8], [226, 8]],
     decor: [
@@ -156,6 +170,7 @@ const LEVELS: LevelDef[] = [
       ['turbo', 60, 1], ['turbo', 137, 4],
       ['magnet', 86, 3], ['magnet', 152, 4],
       ['heart', 73, 5], ['heart', 192, 5],
+      ['flight', 63, 2], ['fire', 117, 2], ['frog', 170, 3],
     ],
     trees: [[8, 8], [24, 8], [48, 8], [74, 8], [100, 8], [126, 8], [152, 8], [178, 8], [200, 8], [214, 8], [228, 8]],
     decor: [
@@ -442,6 +457,9 @@ class PlayScene extends Phaser.Scene {
     this.load.image('sea', `${base}/environment/sea.png`);
     this.load.image('forest', `${base}/environment/forest.png`);
     this.load.image('tiles', `${base}/environment/tileset.png`);
+    this.load.image('form-flight', `${base}/generated/fox-flight-form.png`);
+    this.load.image('form-fire', `${base}/generated/fox-fire-form.png`);
+    this.load.image('form-frog', `${base}/generated/fox-frog-form.png`);
   }
 
   create() {
@@ -558,12 +576,18 @@ class PlayScene extends Phaser.Scene {
 
     /* power-ups */
     L.powerups.forEach(([kind, tx, ty]) => {
-      const p =
-        kind === 'coffee'
-          ? (this.powerups.create(tx * TILE, ty * TILE, EF, 'cherry/cherry-1') as ASprite)
-          : (this.powerups.create(tx * TILE, ty * TILE, `icon-${kind}`) as ASprite);
+      const costume = COSTUME[kind as FormKind];
+      let p: ASprite;
+      if (kind === 'coffee') {
+        p = this.powerups.create(tx * TILE, ty * TILE, EF, 'cherry/cherry-1') as ASprite;
+        p.play('cherry');
+      } else if (costume) {
+        p = this.powerups.create(tx * TILE, ty * TILE, costume) as ASprite;
+        p.setScale(0.55);
+      } else {
+        p = this.powerups.create(tx * TILE, ty * TILE, `icon-${kind}`) as ASprite;
+      }
       p.setDepth(3).setData('kind', kind);
-      if (kind === 'coffee') p.play('cherry');
       (p.body as Phaser.Physics.Arcade.StaticBody).setSize(14, 14);
       this.tweens.add({ targets: p, y: p.y - 3, duration: 900, yoyo: true, repeat: -1, ease: 'sine.inOut' });
     });
@@ -975,10 +999,12 @@ class PlayScene extends Phaser.Scene {
     const eb = e.body as ABody;
     const stomping = pb.velocity.y > 40 && pb.bottom < eb.top + 10;
     const shielded = this.form === 'coffee' && this.time.now < this.formUntil;
+    const fiery = this.form === 'fire' && this.time.now < this.formUntil;
 
-    if (stomping || shielded) {
+    if (stomping || shielded || fiery) {
       this.killEnemy(e);
       sfx.stomp();
+      if (fiery) this.sparkle.explode(8, e.x, e.y);
       if (stomping) this.player.setVelocityY(-240);
       this.cameras.main.shake(80, 0.004);
       return;
@@ -1374,10 +1400,10 @@ class PlayScene extends Phaser.Scene {
     if (time < this.jumpBufferedUntil && time < this.coyoteUntil) {
       this.jumpBufferedUntil = 0;
       this.coyoteUntil = 0;
-      this.player.setVelocityY(-JUMP_V);
+      this.player.setVelocityY(-(this.form === 'frog' ? JUMP_V * 1.3 : JUMP_V));
       sfx.jump();
       this.dust.explode(5, this.player.x, pb.bottom);
-    } else if (jumpPressed && !onFloor && this.form === 'cloud' && this.airJumps < 1) {
+    } else if (jumpPressed && !onFloor && (this.form === 'cloud' || this.form === 'flight') && this.airJumps < 1) {
       this.airJumps++;
       this.jumpBufferedUntil = 0;
       this.player.setVelocityY(-DOUBLE_JUMP_V);
@@ -1385,6 +1411,12 @@ class PlayScene extends Phaser.Scene {
       this.dust.explode(8, this.player.x, pb.bottom);
     }
     if (!jumpHeld && pb.velocity.y < -110) this.player.setVelocityY(-110);
+
+    /* flight form glides — holding jump on the way down caps fall speed */
+    if (this.form === 'flight' && !onFloor && jumpHeld && pb.velocity.y > 45) {
+      pb.velocity.y = 45;
+      if (Math.floor(time / 120) % 2 === 0) this.dust.explode(1, this.player.x, pb.bottom);
+    }
 
     /* magnet form pulls nearby commits in */
     if (this.form === 'magnet') {
@@ -1406,16 +1438,24 @@ class PlayScene extends Phaser.Scene {
     }
     this.wasOnFloorFlag = onFloor;
 
-    /* animation state */
+    /* animation state — costume forms swap to a static AI-generated sprite */
     const hurting = this.player.anims.currentAnim?.key === 'p-hurt' && this.player.anims.isPlaying;
-    if (!hurting) {
+    const costumeKey = this.form !== 'none' ? COSTUME[this.form] : undefined;
+    if (costumeKey && !hurting) {
+      if (this.player.texture.key !== costumeKey) {
+        this.player.anims.stop();
+        this.player.setTexture(costumeKey);
+        this.player.setOrigin(0.5, 0.56); // costume feet sit a touch lower than the atlas frame
+      }
+    } else if (!hurting) {
+      if (this.player.originY !== 0.5) this.player.setOrigin(0.5, 0.5);
       if (!onFloor) this.player.play(pb.velocity.y < 0 ? 'p-jump' : 'p-fall', true);
       else if (Math.abs(pb.velocity.x) > 12) this.player.play('p-run', true);
       else this.player.play('p-idle', true);
     }
 
-    /* form + iframe visuals */
-    if (this.form !== 'none') {
+    /* form + iframe visuals — costumes carry their own colour, so never tint them */
+    if (this.form !== 'none' && !costumeKey) {
       this.player.setTint(Math.floor(time / 90) % 2 ? FORM_TINT[this.form] : 0xffffff);
     } else {
       this.player.clearTint();

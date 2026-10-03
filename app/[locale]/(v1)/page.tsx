@@ -120,19 +120,19 @@ export default function HomePage() {
             <div className="stats" data-reveal>
               <div className="stat">
                 <div className="stat__num"><span data-count="5">5</span><span className="suf">+</span></div>
-                <div className="stat__lbl">Years of experience</div>
+                <div className="stat__lbl">Building production systems</div>
               </div>
               <div className="stat">
-                <div className="stat__num"><span data-count="10">10</span></div>
-                <div className="stat__lbl">Engineers led</div>
+                <div className="stat__num"><span data-count="3">3</span></div>
+                <div className="stat__lbl">Startups — shipped across healthtech, aquaculture &amp; enterprise</div>
               </div>
               <div className="stat">
-                <div className="stat__num"><span data-count="30">30</span><span className="suf">%</span></div>
-                <div className="stat__lbl">Faster deployments via CI/CD</div>
+                <div className="stat__num"><span data-count="2023">2023</span></div>
+                <div className="stat__lbl">POESAM first-prize team (eSteps Health)</div>
               </div>
               <div className="stat">
-                <div className="stat__num"><span data-count="25">25</span><span className="suf">%</span></div>
-                <div className="stat__lbl">Team productivity gain</div>
+                <div className="stat__num">AWS</div>
+                <div className="stat__lbl">Architecture, CI/CD &amp; deployment</div>
               </div>
             </div>
           </div>
@@ -153,7 +153,7 @@ export default function HomePage() {
                   <span className="now__idx">001</span>
                   <div className="now__txt">
                     <h3>Leading cloud architecture at Aquadeep</h3>
-                    <p>Designing scalable AWS systems, managing developers and CI/CD pipelines, and driving uptime and reliability.</p>
+                    <p>Designing scalable AWS systems, leading engineering and CI/CD pipelines, and driving uptime and reliability.</p>
                   </div>
                 </div>
                 <div className="now__item" data-reveal data-reveal-delay="1">
@@ -192,7 +192,7 @@ export default function HomePage() {
             <div className="feat">
               <Link className="feat__card" href="/projects/esteps">
                 <div className="feat__top"><h3>Real-time healthcare SaaS</h3><span className="feat__no">01</span></div>
-                <p>End-to-end platform on Node.js, Angular &amp; AWS — 20% faster data retrieval, 15% lower latency, team of 10.</p>
+                <p>Real-time healthcare SaaS — contributed backend and full-stack development on a Node.js / Angular / AWS platform with real-time patient monitoring. Part of the engineering team behind the product that won first prize at Orange POESAM 2023.</p>
                 <div className="chips"><span className="chip">Node.js</span><span className="chip">Angular</span><span className="chip">AWS</span><span className="chip">MongoDB</span></div>
                 <span className="door-cta">Enter <em>→</em></span>
               </Link>

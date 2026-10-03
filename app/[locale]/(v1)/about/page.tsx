@@ -47,7 +47,7 @@ export default function AboutPage() {
                   I care about <b>secure design</b>, clean architecture, and the operational discipline that keeps
                   production systems fast and reliable.
                 </p>
-                <span className="award-tag">★ First Prize, POESAM 2023 — with eSteps Health</span>
+                <span className="award-tag">★ First Prize, Orange POESAM 2023 — with eSteps Health</span>
 
                 <dl className="facts">
                   <div className="fact"><dt>Location</dt><dd>Tunis, Tunisia</dd></div>

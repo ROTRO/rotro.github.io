@@ -3,7 +3,9 @@ import type { Project } from './types';
 /**
  * Project catalogue — the single source of truth for the Projects carousel
  * and case-study detail view. Imported by Carousel/CaseModal and used to
- * build JSON-LD structured data for SEO.
+ * build JSON-LD structured data for SEO. Each entry's `fr` field holds the
+ * French translation of its translatable copy; use `localizeProjects` to
+ * resolve a list for a given locale.
  */
 export const projects: Project[] = [
   {
@@ -31,6 +33,24 @@ export const projects: Project[] = [
       { src: '/assets/fitcore/calories.webp', cap: 'Calories & macro targets' },
       { src: '/assets/fitcore/onboarding.webp', cap: 'Health-profile onboarding' },
     ],
+    fr: {
+      kind: 'Projet personnel',
+      tagline: 'Compagnon fitness & nutrition multiplateforme',
+      desc: 'Une application fitness complète conçue et développée de bout en bout — onboarding guidé avec profil santé, IMC et objectifs caloriques, plans d’entraînement générés par IA, et suivi nutritionnel détaillé (calories, macros, eau). Appuyée sur Supabase, avec séries de régularité, XP et badges gamifiés pour garder la motivation.',
+      feats: [
+        'Génération de plans d’entraînement par IA à partir d’objectifs en langage naturel',
+        'Suivi nutrition, macros et eau avec objectifs quotidiens',
+        'Séries de régularité, XP et badges à débloquer',
+        'Build Android natif via Capacitor',
+      ],
+      galleryCaps: [
+        'Tableau de bord',
+        'Entraînements · génération IA',
+        'Repas et suivi de l’eau',
+        'Calories et objectifs macros',
+        'Onboarding profil santé',
+      ],
+    },
   },
   {
     id: 'echo',
@@ -56,6 +76,23 @@ export const projects: Project[] = [
       { src: '/assets/echo/grid1.webp', cap: 'All Kimono — product grid' },
       { src: '/assets/echo/grid2.webp', cap: 'Chapters 05–08' },
     ],
+    fr: {
+      kind: 'Projet personnel',
+      tagline: 'IBRAZIA — boutique éditoriale de kimonos de luxe',
+      desc: 'Un concept e-commerce éditorial haut de gamme pour kimonos tissés à la main — construit autour d’une identité serif raffinée, de collections organisées en « chapitres », et d’une navigation lente, façon galerie. Entièrement bilingue (EN/FR), avec grille produits ajustable, filtres, panier et fiches produit sur un système de composants shadcn/ui.',
+      feats: [
+        'Système graphique éditorial — police serif, palette sobre',
+        'Collections présentées comme des « chapitres » numérotés avec visuel de couverture',
+        'Bilingue EN/FR avec localisation i18next',
+        'Grilles ajustables, filtres, panier et fiches produit',
+      ],
+      galleryCaps: [
+        'Hero — chaque geste',
+        'Collections — huit chapitres',
+        'Tout le kimono — grille produits',
+        'Chapitres 05–08',
+      ],
+    },
   },
   {
     id: 'eya',
@@ -82,6 +119,24 @@ export const projects: Project[] = [
       { src: '/assets/eya/nutrition.webp', cap: 'Nutrition & transformation' },
       { src: '/assets/eya/contact.webp', cap: 'Contact' },
     ],
+    fr: {
+      kind: 'Projet personnel',
+      tagline: 'Plateforme premium de bien-être et coaching pour femmes',
+      desc: 'Une marque de coaching bilingue full-stack pour femmes — mêlant coaching personnel, nutrition et une académie en ligne dans une expérience éditoriale haut de gamme. Construite sur TanStack Start avec un backend Supabase et déployée en edge sur Cloudflare Workers.',
+      feats: [
+        'Bilingue FR/EN, identité éditoriale serif sur olive & crème',
+        'Outil bien-être IMC interactif',
+        'Académie — cours et programmes en ligne premium',
+        'Nutrition, coaching, témoignages & contact',
+      ],
+      galleryCaps: [
+        'Accueil — vous-même',
+        'IMC — outil bien-être',
+        'Académie — cours en ligne',
+        'Nutrition & transformation',
+        'Contact',
+      ],
+    },
   },
   {
     id: 'visionnaire',
@@ -108,6 +163,24 @@ export const projects: Project[] = [
       { src: '/assets/visionnaire/product.webp', cap: 'Product — full specs & virtual try-on' },
       { src: '/assets/visionnaire/tryon.webp', cap: 'AR try-on — FittingBox FitMix' },
     ],
+    fr: {
+      kind: 'Projet personnel',
+      tagline: 'Boutique de lunetterie avec essayage virtuel AR',
+      desc: 'Une boutique e-commerce de lunetterie complète construite autour d’un vrai catalogue de créateurs — Dior, BOSS et plus — où les clients essaient les montures sur leur propre visage en temps réel. Le cœur du projet est une intégration AR FittingBox / FitMix : on choisit une monture, on clique sur « Essayage virtuel », et les lunettes suivent le visage en direct dans le navigateur. Appuyée sur Firebase, avec un flux webcam respectueux de la vie privée et un pipeline analytique maison capturant le comportement utilisateur.',
+      feats: [
+        'Essayage AR en direct — suivi de visage FittingBox FitMix dans le navigateur',
+        'Vrai catalogue de créateurs avec EAN, specs, couleur & données de taille',
+        'Panier, paiement, comptes & liste de souhaits sur un store Redux Toolkit',
+        'Quatre variantes de page produit interchangeables via feature flag',
+        'Backend de suivi sur mesure — Express + Gmail OAuth2, export Excel',
+      ],
+      galleryCaps: [
+        'Accueil — Style & Élégance',
+        'Collection — montures Dior & BOSS',
+        'Produit — specs complètes & essayage virtuel',
+        'Essayage AR — FittingBox FitMix',
+      ],
+    },
   },
   {
     id: 'orizon',
@@ -135,6 +208,25 @@ export const projects: Project[] = [
       { src: '/assets/orizon/dresses.webp', cap: 'Catalogue de style — faceted filters' },
       { src: '/assets/orizon/shop.webp', cap: 'Boutique — token wallet & checkout' },
     ],
+    fr: {
+      kind: 'Produit · Full-Stack',
+      tagline: 'Marketplace de services mariages & événements',
+      desc: 'Une marketplace complète pour organiser mariages et événements de bout en bout — les couples parcourent lieux, traiteurs, photographes, robes et transport, puis réservent et paient au même endroit, pendant que les prestataires gèrent leur propre boutique avec abonnements et tableau de bord professionnel. Construite comme trois applications : un client React, un back-office Angular 18 et une API NestJS.',
+      feats: [
+        'Marketplace sur 10+ catégories de services — des lieux au transport',
+        'Portail prestataire — boutiques, abonnements, historique de paiement',
+        'Réservations, panier & paiement avec portefeuille de jetons et moyens de paiement enregistrés',
+        'API NestJS — rôles JWT, avis, notifications, facturation PDF',
+        'Admin Angular avec NgRx, planification calendrier & tableaux de bord analytiques',
+      ],
+      galleryCaps: [
+        'Accueil — votre mariage de rêve',
+        'Lieux de réception — listings & avis',
+        'Traiteur — sélection de traiteurs',
+        'Catalogue de style — filtres facettés',
+        'Boutique — portefeuille de jetons & paiement',
+      ],
+    },
   },
   {
     id: 'ipacss',
@@ -156,6 +248,19 @@ export const projects: Project[] = [
     stack: ['Angular 13', 'GraphQL', 'Apollo', 'Sequelize', 'MySQL', 'Node.js', 'Ionic', 'Capacitor'],
     shape: null,
     gallery: [],
+    fr: {
+      kind: 'Plateforme · Full-Stack',
+      tagline: 'Plateforme de gestion de campus universitaire',
+      desc: 'Une plateforme large et multi-rôles pour piloter un établissement d’enseignement supérieur de bout en bout — étudiants, enseignants, classes, matières et plans d’études jusqu’aux emplois du temps, notes, présences, offres de stage, demandes de documents et réclamations. Construite en trois parties : une API GraphQL sur MySQL, un tableau de bord admin Angular avec rôles super-admin / admin / staff, et une application mobile Ionic pour étudiants et enseignants. L’un de mes plus grands projets, avec près de 60 modèles de données.',
+      feats: [
+        'API GraphQL (Apollo + Sequelize + MySQL) — ~60 entités modélisées',
+        'Tableau de bord Angular à rôles — super-admin, admin & staff',
+        'Cœur académique — classes, modules, plans d’études, notes & présences',
+        'Carrières — offres de stage, CV, candidatures & liens entreprises',
+        'App mobile Ionic + Capacitor avec auth JWT & scan de codes-barres',
+        'Auth JWT, envoi de fichiers & emails transactionnels (Nodemailer / Mailjet)',
+      ],
+    },
   },
   {
     id: 'cafe-caisse',
@@ -176,25 +281,48 @@ export const projects: Project[] = [
     stack: ['Ionic', 'Angular', 'Capacitor', 'Firebase', 'PrimeNG', 'Sunmi Printer'],
     shape: null,
     gallery: [],
+    fr: {
+      kind: 'Produit · Mobile',
+      tagline: 'Caisse enregistreuse pour cafés & restaurants',
+      desc: 'Une application caisse sur tablette pour cafés et restaurants : ouverture de tables, prise de commandes sur un catalogue produits en direct, et envoi des tickets vers une imprimante thermique. Construite avec Ionic et Angular, packagée pour Android avec Capacitor, et appuyée sur Firebase — avec une file d’impression qui pilote une imprimante intégrée Sunmi via un plugin Capacitor.',
+      feats: [
+        'Gestion des tables & commandes avec catalogue produits en direct',
+        'Impression thermique via le plugin imprimante intégrée Sunmi',
+        'File d’impression résiliente pour un matériel peu fiable',
+        'Backend Firebase avec stockage local tolérant au hors-ligne',
+        'Build Android natif via Capacitor',
+      ],
+    },
   },
   {
     id: 'esteps',
-    kind: 'Professional · Lead',
+    kind: 'Professional · Contributor',
     year: '2023–24',
     live: null,
     name: 'Real-time healthcare SaaS',
-    tagline: 'eSteps Health',
+    tagline: 'eSteps Health · Remote · Boston, MA-based startup',
     cover: null,
-    desc: 'End-to-end platform engineering for a real-time healthcare product: Node.js and Angular on AWS, MongoDB performance work, and team leadership across delivery, reliability and latency-sensitive features. Led a team of 10, improved data retrieval by 20% and reduced latency by 15%.',
+    desc: 'Real-time healthcare SaaS — contributed backend and full-stack development on a Node.js / Angular / AWS platform with real-time patient monitoring. Part of the engineering team behind the product that won first prize at Orange POESAM 2023.',
     feats: [
       'Real-time monitoring platform on Node.js, Angular & AWS',
-      'MongoDB optimization — 20% faster data retrieval',
-      'Led 10 engineers, +25% team productivity',
-      '★ First Prize — POESAM 2023',
+      'Backend development & MongoDB performance work',
+      'Part of the engineering team, delivery & reliability',
+      '★ First Prize — Orange POESAM 2023',
     ],
     stack: ['Node.js', 'Angular', 'AWS', 'MongoDB'],
     shape: null,
     gallery: [],
+    fr: {
+      kind: 'Professionnel · Contributeur',
+      tagline: 'eSteps Health · À distance · startup basée à Boston, MA',
+      desc: 'SaaS santé en temps réel — contribution au développement backend et full-stack d’une plateforme Node.js / Angular / AWS avec suivi patient en temps réel. Membre de l’équipe d’ingénierie derrière le produit lauréat du premier prix Orange POESAM 2023.',
+      feats: [
+        'Plateforme de suivi en temps réel sur Node.js, Angular & AWS',
+        'Développement backend & optimisation MongoDB',
+        'Membre de l’équipe d’ingénierie, livraison & fiabilité',
+        '★ Premier prix — Orange POESAM 2023',
+      ],
+    },
   },
   {
     id: 'aquadeep',
@@ -204,15 +332,24 @@ export const projects: Project[] = [
     name: 'Cloud platforms & reliability',
     tagline: 'Aquadeep',
     cover: null,
-    desc: 'Technical leadership on AWS architectures, scalable services and CI/CD modernization — balancing speed of delivery with production stability and operational excellence. Established pipelines that cut deployment times by 30%.',
+    desc: 'Technical leadership on AWS architectures, scalable services and CI/CD modernization — balancing speed of delivery with production stability and operational excellence.',
     feats: [
       'Scalable AWS architecture & services',
-      'CI/CD modernization — 30% faster deploys',
+      'CI/CD modernization & faster, more reliable deploys',
       'Improved uptime via modern DevOps practices',
     ],
     stack: ['AWS', 'CI/CD', 'Leadership'],
     shape: null,
     gallery: [],
+    fr: {
+      kind: 'Professionnel · Lead technique',
+      desc: 'Direction technique sur les architectures AWS, les services scalables et la modernisation CI/CD — en équilibrant vitesse de livraison, stabilité en production et excellence opérationnelle.',
+      feats: [
+        'Architecture & services AWS scalables',
+        'Modernisation CI/CD & déploiements plus rapides et fiables',
+        'Amélioration de la disponibilité via des pratiques DevOps modernes',
+      ],
+    },
   },
   {
     id: 'rms',
@@ -232,6 +369,16 @@ export const projects: Project[] = [
     stack: ['Angular', 'NestJS', 'Flutter', 'Ionic'],
     shape: null,
     gallery: [],
+    fr: {
+      kind: 'Professionnel · Full-Stack',
+      desc: 'Travail full-stack couvrant Angular, NestJS, Flutter et Ionic, avec un fort accent sur les patterns de sécurité, les frontières microservices et des choix d’infrastructure pragmatiques. Rôle d’architecte systèmes sur la stratégie de déploiement.',
+      feats: [
+        'Architectures AWS pour charges de production',
+        'Livraison Angular, NestJS, Flutter & Ionic',
+        'Bonnes pratiques de sécurité — auth & protection des données',
+        'Structure microservices & stratégie de déploiement',
+      ],
+    },
   },
   {
     id: 'novavespera',
@@ -246,5 +393,28 @@ export const projects: Project[] = [
     stack: ['React', 'Performance', 'SEO'],
     shape: null,
     gallery: [],
+    fr: {
+      kind: 'Personnel · Marque',
+      tagline: 'Portfolio & présence de marque',
+      desc: 'Une vitrine ciblée pour le travail d’ingénierie, le leadership et la livraison cloud-first — pensée pour la clarté, la performance et la crédibilité auprès de partenaires et recruteurs potentiels.',
+      feats: ['Build orienté performance', 'SEO & accessibilité', 'Présence de marque claire et crédible'],
+    },
   },
 ];
+
+/** Resolve a project list for the given locale, merging `fr` overrides onto the English base. */
+export function localizeProjects(items: Project[], locale: string): Project[] {
+  if (locale !== 'fr') return items;
+  return items.map((p) => {
+    const t = p.fr;
+    if (!t) return p;
+    return {
+      ...p,
+      kind: t.kind ?? p.kind,
+      tagline: t.tagline ?? p.tagline,
+      desc: t.desc ?? p.desc,
+      feats: t.feats ?? p.feats,
+      gallery: t.galleryCaps ? p.gallery.map((g, i) => ({ ...g, cap: t.galleryCaps![i] ?? g.cap })) : p.gallery,
+    };
+  });
+}

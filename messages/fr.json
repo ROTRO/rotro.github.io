@@ -1,0 +1,432 @@
+{
+  "meta": {
+    "role": "Ingénieur Full-Stack & Lead technique",
+    "siteDescription": "Ingénieur full-stack, lead technique et spécialiste cloud construisant des systèmes sécurisés et scalables sur AWS — de l’architecture au déploiement.",
+    "ogDescription": "Construire des systèmes sécurisés et scalables sur AWS — de l’architecture au déploiement."
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "experience": "Expérience",
+    "projects": "Projets",
+    "contact": "Contact",
+    "play": "Jouer"
+  },
+  "header": {
+    "cmdkAria": "Ouvrir la palette de commandes",
+    "status": "Disponible pour une mission",
+    "menuOpen": "Ouvrir le menu",
+    "menuClose": "Fermer le menu"
+  },
+  "language": {
+    "label": "Langue",
+    "en": "EN",
+    "fr": "FR"
+  },
+  "skip": {
+    "toContent": "Aller au contenu"
+  },
+  "sound": {
+    "enable": "Activer le son d’ambiance",
+    "disable": "Désactiver le son d’ambiance",
+    "label": "Son"
+  },
+  "preloader": {
+    "hint": "Initialisation des systèmes"
+  },
+  "cmdk": {
+    "ariaLabel": "Palette de commandes",
+    "placeholder": "Aller à une page, un projet, une action…",
+    "esc": "échap",
+    "empty": "Aucun résultat.",
+    "groupPages": "Pages",
+    "groupProjects": "Projets",
+    "groupActions": "Actions",
+    "actionSound": "Activer/couper le son d’ambiance",
+    "actionSoundHint": "on / off",
+    "actionEmail": "Copier l’adresse email",
+    "actionEmailCopied": "Copié ✓",
+    "actionCv": "Télécharger le CV",
+    "actionCvHint": "PDF",
+    "actionPlay": "Jouer à Deploy Run",
+    "actionPlayHint": "le jeu"
+  },
+  "gameBadge": {
+    "title": "Battez votre meilleur score",
+    "prefix": "Meilleur déploiement :",
+    "pts": "pts"
+  },
+  "home": {
+    "hero": {
+      "chipYears": "5+ ans",
+      "chipRole": "Lead technique",
+      "chipLocation": "Tunis · UTC+1",
+      "desc": "Ingénieur full-stack & lead technique construisant des systèmes sécurisés et scalables sur AWS — de l’architecture au déploiement.",
+      "ctaWork": "Voir les projets",
+      "ctaAbout": "À propos de moi",
+      "resume": "CV",
+      "play": "Jouer au jeu",
+      "scroll": "Défiler pour explorer"
+    },
+    "stats": {
+      "sectionLabel": "01 / EN CHIFFRES",
+      "items": [
+        { "num": "5", "suf": "+", "lbl": "Construction de systèmes en production" },
+        { "num": "3", "lbl": "Startups — livrées dans la healthtech, l’aquaculture & l’entreprise" },
+        { "num": "2023", "lbl": "Équipe premier prix POESAM (eSteps Health)" },
+        { "num": "AWS", "lbl": "Architecture, CI/CD & déploiement" }
+      ]
+    },
+    "focus": {
+      "sectionLabel": "02 / FOCUS",
+      "heading1": "Ce que je",
+      "heading2": "fais en ce moment",
+      "items": [
+        {
+          "idx": "001",
+          "h": "Direction de l’architecture cloud chez Aquadeep",
+          "p": "Conception de systèmes AWS scalables, direction de l’ingénierie et des pipelines CI/CD, et amélioration de la disponibilité et de la fiabilité."
+        },
+        {
+          "idx": "002",
+          "h": "Livraison full-stack chez RMSoftware",
+          "p": "Architecture de charges de production avec Angular, NestJS, Flutter et Ionic — avec la sécurité intégrée dès le départ."
+        },
+        {
+          "idx": "003",
+          "h": "Exploration de React, Vue & Next.js",
+          "p": "Modernisation continue de ma stack et perfectionnement du savoir-faire front, en parallèle du travail backend et infrastructure."
+        }
+      ]
+    },
+    "featured": {
+      "sectionLabel": "03 / TRAVAUX SÉLECTIONNÉS",
+      "heading1": "Ce que j’ai",
+      "heading2": "construit & dirigé",
+      "allProjects": "Tous les projets",
+      "enter": "Ouvrir",
+      "cards": {
+        "esteps": {
+          "title": "SaaS santé en temps réel",
+          "desc": "SaaS santé en temps réel — contribution au développement backend et full-stack d’une plateforme Node.js / Angular / AWS avec suivi patient en temps réel. Membre de l’équipe d’ingénierie derrière le produit lauréat du premier prix Orange POESAM 2023."
+        },
+        "aquadeep": {
+          "title": "Plateformes cloud & fiabilité",
+          "desc": "Direction technique sur les architectures AWS et la modernisation CI/CD — en équilibrant vitesse de livraison et stabilité en production."
+        },
+        "rms": {
+          "title": "Livraison full-stack entreprise",
+          "desc": "Travail produit sur Angular, NestJS, Flutter & Ionic avec des patterns de sécurité et des frontières microservices."
+        },
+        "novavespera": {
+          "title": "Novavespera",
+          "desc": "Un portfolio et une présence de marque ciblés, pensés pour la clarté, la performance et la crédibilité auprès des recruteurs."
+        }
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "À propos · profile.md",
+    "title1": "Ingénieur qui",
+    "title2": "dirige & livre.",
+    "bio1": "Je suis <b>Bilel Hedhli</b> — Lead technique et Ingénieur Full-Stack basé à Tunis, Tunisie, avec <b>plus de 5 ans</b> à livrer des logiciels innovants, scalables et cloud-first.",
+    "bio2": "Je construis des systèmes complexes avec les technologies JavaScript — <b>Angular, Node.js, React, Next.js</b> — j’intègre des plateformes cloud comme <b>AWS, Firebase et Docker</b>, et je fluidifie la livraison avec des pipelines CI/CD. J’ai dirigé des équipes transverses, modernisé des bases de code legacy, et livré des applications santé et métier en temps réel de bout en bout.",
+    "bio3": "J’attache de l’importance à la <b>sécurité dès la conception</b>, à une architecture propre, et à la rigueur opérationnelle qui garde les systèmes en production rapides et fiables.",
+    "award": "★ Premier prix, Orange POESAM 2023 — avec eSteps Health",
+    "facts": {
+      "location": "Localisation",
+      "locationValue": "Tunis, Tunisie",
+      "experience": "Expérience",
+      "experienceValue": "5+ ans",
+      "currentRole": "Poste actuel",
+      "currentRoleValue": "Lead technique",
+      "focus": "Focus",
+      "focusValue": "AWS · Architecture",
+      "email": "Email",
+      "availability": "Disponibilité",
+      "availabilityValue": "● Ouvert aux opportunités"
+    },
+    "skills": {
+      "sectionLabel": "01 / COMPÉTENCES",
+      "heading": "La boîte à outils",
+      "languages": "Langages & frameworks",
+      "cloud": "Cloud & livraison",
+      "data": "Données",
+      "architecture": "Architecture & sécurité"
+    },
+    "education": {
+      "heading": "// Formation",
+      "msc": "M.Sc. — Génie Logiciel & Applications Multimédias",
+      "mscMeta": "Institut Supérieur des Technologies, Radès · 2020 — 2022",
+      "bsc": "B.Sc. — Génie Logiciel",
+      "bscMeta": "Institut Supérieur des Technologies, Bizerte · 2017 — 2020"
+    },
+    "certifications": {
+      "heading": "// Certifications",
+      "cert1": "Introduction à la programmation avec Java",
+      "cert2": "Fondamentaux de la cybersécurité",
+      "cert3": "Fondamentaux du développement d’applications HTML5"
+    }
+  },
+  "experience": {
+    "eyebrow": "Expérience · 2020 → aujourd’hui",
+    "title1": "Cinq ans,",
+    "title2": "cinq équipes.",
+    "lead": "De la livraison full-stack sur le terrain à la direction d’ingénieurs et la responsabilité de l’architecture cloud — un parcours fait de systèmes fiables livrés et d’impact mesurable.",
+    "current": "Actuel"
+  },
+  "projects": {
+    "eyebrowPrefix": "Travaux sélectionnés",
+    "title1": "Ce que j’ai",
+    "title2": "construit & dirigé.",
+    "lead": "Une sélection ciblée — ingénierie plateforme, architecture cloud et livraison produit, avec un accent sur la fiabilité, la sécurité et les résultats d’équipe.",
+    "moreLabel": "// Glissez, parcourez, ouvrez — chaque projet est une étude de cas",
+    "carousel": {
+      "previous": "Précédent",
+      "next": "Suivant",
+      "dragHint": "glisser · cliquer pour ouvrir",
+      "viewCase": "Voir l’étude de cas"
+    },
+    "caseModal": {
+      "close": "Fermer",
+      "highlights": "Points clés",
+      "stack": "Stack",
+      "visitLive": "Voir le site en ligne",
+      "sourcePrivate": "Source privée",
+      "fullCasePage": "Page complète de l’étude de cas",
+      "prev": "Préc.",
+      "next": "Suiv.",
+      "previousProject": "Projet précédent",
+      "nextProject": "Projet suivant"
+    }
+  },
+  "projectCase": {
+    "caseStudy": "Étude de cas",
+    "live": "En ligne",
+    "private": "Privé",
+    "highlights": "Points clés",
+    "stack": "Stack",
+    "visitLive": "Voir le site en ligne",
+    "sourcePrivate": "Source privée",
+    "allProjects": "Tous les projets",
+    "previous": "Précédent",
+    "next": "Suivant"
+  },
+  "contact": {
+    "eyebrow": "Contact · dites bonjour",
+    "title": "Discutons.",
+    "lead": "Ouvert aux postes de direction technique, full-stack et cloud — et aux collaborations intéressantes. Le moyen le plus rapide de me joindre est ci-dessous.",
+    "labels": {
+      "email": "Email",
+      "phone": "Téléphone",
+      "linkedin": "LinkedIn",
+      "portfolio": "Portfolio",
+      "location": "Localisation"
+    },
+    "availability": {
+      "title": "Disponible pour une mission",
+      "desc": "Actuellement ouvert à de nouvelles opportunités et missions freelance. Réponse habituelle sous 24 heures."
+    },
+    "footerHeadline1": "Vous préférez l’email ?",
+    "footerHeadline2": "Je les lis tous.",
+    "form": {
+      "name": "Nom",
+      "namePlaceholder": "Votre nom",
+      "email": "Email",
+      "emailPlaceholder": "vous@entreprise.com",
+      "subject": "Sujet",
+      "subjectPlaceholder": "De quoi s’agit-il ?",
+      "message": "Message",
+      "messagePlaceholder": "Parlez-moi du poste ou du projet…",
+      "send": "Envoyer le message",
+      "sent": "Envoyé",
+      "note": "// chiffré · sans spam",
+      "thanks": "✓ Merci — je reviens vers vous rapidement."
+    }
+  },
+  "play": {
+    "eyebrow": "Easter egg · jeu en canvas",
+    "title": "Deploy Run",
+    "desc": "Un platformer sur le thème de la carrière, reconstruit sur <b>Phaser 3</b>. Deux niveaux — Staging le jour, Production la nuit — avec des power-up, des plateformes mobiles et friables, des checkpoints, une note de S à C, et un incident de boss à résoudre avant de pouvoir déployer. Entièrement jouable sur mobile avec des contrôles à l’écran.",
+    "keysMove": "déplacer",
+    "keysJump": "sauter",
+    "keysDash": "dash",
+    "keysMute": "muet",
+    "keysRestart": "recommencer",
+    "touchHint": "· contrôles tactiles sur mobile",
+    "credit": "Phaser 3 · art : Sunny Land par ansimuz"
+  },
+  "notFound": {
+    "eyebrow": "Erreur · 404",
+    "title1": "Le fil est",
+    "title2": "perdu.",
+    "lead": "Cette page n’existe pas — ou a été déplacée. Revenons sur la bonne voie.",
+    "cta": "Retour à l’accueil"
+  },
+  "footer": {
+    "navigate": "Navigation",
+    "elsewhere": "Ailleurs",
+    "startConversation": "Démarrer une conversation",
+    "tagline": "Full-Stack · Cloud · Leadership",
+    "defaultHeadline1": "Construisons",
+    "defaultHeadline2": "quelque chose de solide."
+  },
+  "v2": {
+    "nav": {
+      "home": "Accueil",
+      "about": "À propos",
+      "experience": "Expérience",
+      "projects": "Projets",
+      "play": "Jouer",
+      "contact": "Contact"
+    },
+    "common": {
+      "talk": "Parlons-en",
+      "viewWork": "Voir les projets",
+      "resume": "CV",
+      "allProjects": "Tous les projets",
+      "fullExperience": "Tout le parcours",
+      "aboutMe": "À propos",
+      "nextPage": "Page suivante",
+      "menu": "Menu",
+      "close": "Fermer",
+      "openMenu": "Ouvrir le menu",
+      "closeMenu": "Fermer le menu",
+      "language": "Langue",
+      "skip": "Aller au contenu",
+      "home": "Page d’accueil"
+    },
+    "home": {
+      "metaTitle": "Ingénieur Full-Stack & Lead technique",
+      "metaDesc": "Ingénieur full-stack et lead technique, je construis des systèmes sécurisés et scalables sur AWS, de l’architecture au déploiement.",
+      "heroTitle": "Ingénieur full-stack, je construis des systèmes sûrs et scalables sur AWS.",
+      "heroSub": "Lead technique avec plus de 5 ans de livraisons en santé, aquaculture et logiciel d’entreprise.",
+      "intro": "Je conçois des architectures cloud, je dirige des équipes d’ingénierie et je livre des produits full-stack, du premier schéma au pipeline de production.",
+      "workTitle": "Projets choisis",
+      "workSub": "Des produits que j’ai conçus, développés ou dirigés, de l’app mobile à la plateforme cloud.",
+      "gameLine1": "Collecter les commits",
+      "gameLine2": "Écraser les bugs",
+      "gameLine3": "Livrer en production",
+      "gameBody": "Deploy Run est un jeu de plateforme pixel art sur mon métier : deux niveaux, un incident final à résoudre, et des contrôles tactiles sur mobile.",
+      "gameCta": "Jouer à Deploy Run",
+      "gameAlt": "Capture de Deploy Run : un renard saute de plateforme en plateforme dans une jungle en ramassant des gemmes",
+      "expTitle": "Mon parcours"
+    },
+    "footer": {
+      "contact": "Contact",
+      "elsewhere": "Ailleurs",
+      "pages": "Pages",
+      "location": "Tunis, Tunisie (UTC+1)",
+      "rights": "© {year} Bilel Hedhli",
+      "built": "Construit avec Next.js et three.js"
+    },
+    "about": {
+      "metaDesc": "Lead technique et ingénieur full-stack avec plus de 5 ans d’expérience sur AWS : Angular, Node.js, React et architecture sécurisée.",
+      "title": "Un ingénieur qui dirige et qui livre.",
+      "photoAlt": "Portrait de Bilel Hedhli",
+      "bio1": "Je suis Bilel Hedhli, lead technique et ingénieur full-stack basé à Tunis, avec plus de cinq ans de logiciels cloud scalables livrés.",
+      "bio2": "Je construis des systèmes complexes avec Angular, Node.js, React et Next.js, je les fais tourner sur AWS, Firebase et Docker, et je garde des livraisons rapides grâce au CI/CD. J’ai dirigé des équipes pluridisciplinaires, modernisé des bases de code anciennes et livré de bout en bout des applications métier et santé en temps réel.",
+      "bio3": "Je tiens à la sécurité dès la conception, à une architecture propre et à la rigueur opérationnelle qui garde la production rapide et fiable.",
+      "facts": {
+        "location": "Lieu",
+        "locationV": "Tunis, Tunisie",
+        "experience": "Expérience",
+        "experienceV": "5 ans et plus",
+        "role": "Poste actuel",
+        "roleV": "Ingénieur full-stack",
+        "focus": "Spécialité",
+        "focusV": "Architecture AWS"
+      },
+      "toolkitTitle": "Boîte à outils",
+      "groups": {
+        "lang": "Langages et frameworks",
+        "cloud": "Cloud et livraison",
+        "data": "Données",
+        "arch": "Architecture et sécurité"
+      },
+      "archItems": [
+        "Architecture système",
+        "Microservices",
+        "Bonnes pratiques de sécurité",
+        "Agile / Scrum"
+      ],
+      "awardTop": "Premier prix",
+      "awardBody": "Orange POESAM 2023, avec l’équipe eSteps Health.",
+      "eduTitle": "Formation",
+      "edu": [
+        {
+          "degree": "Master en logiciels informatiques et applications multimédias",
+          "school": "Institut Supérieur des Études Technologiques, Radès",
+          "years": "2020-2022"
+        },
+        {
+          "degree": "Licence en génie logiciel",
+          "school": "Institut Supérieur des Études Technologiques, Bizerte",
+          "years": "2017-2020"
+        }
+      ],
+      "certTitle": "Certifications",
+      "certs": [
+        "Introduction to Programming Using Java",
+        "Foundations of Cybersecurity",
+        "HTML5 Application Development Fundamentals"
+      ]
+    },
+    "experience": {
+      "metaDesc": "Parcours de Bilel Hedhli : postes de lead technique et d’ingénieur full-stack en santé, aquaculture et logiciel d’entreprise.",
+      "title": "Expérience",
+      "sub": "De développeur à lead technique, entre startups et équipes produit.",
+      "current": "Actuel"
+    },
+    "projects": {
+      "metaDesc": "Projets choisis de Bilel Hedhli : applications mobiles, e-commerce, plateformes événementielles et systèmes cloud.",
+      "title": "Projets",
+      "sub": "Produits personnels, plateformes clients et travail d’équipe, chacun avec ses notes de cas.",
+      "visit": "Voir le site",
+      "stack": "Stack",
+      "highlights": "Points clés",
+      "screens": "Écrans",
+      "caseTitle": "{name}, étude de cas"
+    },
+    "contact": {
+      "metaDesc": "Contactez Bilel Hedhli, ingénieur full-stack et lead technique basé à Tunis. Ouvert aux postes de direction technique, full-stack et cloud.",
+      "title": "Parlons-en.",
+      "sub": "Ouvert aux postes de direction technique, full-stack et cloud, ainsi qu’aux collaborations intéressantes.",
+      "email": "E-mail",
+      "copy": "Copier",
+      "copied": "Copié",
+      "phone": "Téléphone",
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "formTitle": "Écrire un message",
+      "name": "Votre nom",
+      "from": "Votre e-mail",
+      "message": "Message",
+      "messageHelp": "Quelques lignes sur le poste ou le projet suffisent.",
+      "send": "Envoyer par e-mail",
+      "sendHelp": "Ouvre votre messagerie avec ce message pré-rempli.",
+      "errName": "Merci d’indiquer votre nom.",
+      "errEmail": "Merci de saisir une adresse e-mail valide.",
+      "errMessage": "Merci d’écrire un court message.",
+      "subject": "Bonjour de la part de {name}"
+    },
+    "play": {
+      "metaTitle": "Deploy Run, le jeu",
+      "metaDesc": "Un jeu de plateforme pixel art inspiré de ma carrière, construit avec Phaser. Collectez des commits, écrasez des bugs et livrez en production.",
+      "title": "Deploy Run",
+      "sub": "Un jeu de plateforme inspiré de ma carrière, construit avec Phaser. Deux niveaux, des formes bonus et un incident final à résoudre avant de livrer.",
+      "move": "bouger",
+      "jump": "sauter",
+      "dash": "foncer",
+      "mute": "muet",
+      "restart": "recommencer",
+      "touch": "Contrôles tactiles sur mobile",
+      "credit": "Graphismes : Sunny Land par ansimuz"
+    },
+    "notFound": {
+      "title": "Page introuvable.",
+      "body": "Cette page n’existe pas ou a été déplacée.",
+      "back": "Retour à l’accueil"
+    }
+  }
+}

@@ -1,0 +1,432 @@
+{
+  "meta": {
+    "role": "Full-Stack Engineer & Technical Lead",
+    "siteDescription": "Full-stack engineer, technical lead, and cloud solutions specialist building secure, scalable systems on AWS — from architecture to deployment.",
+    "ogDescription": "Building secure, scalable systems on AWS — from architecture to deployment."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "play": "Play"
+  },
+  "header": {
+    "cmdkAria": "Open command palette",
+    "status": "Available for work",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
+  },
+  "language": {
+    "label": "Language",
+    "en": "EN",
+    "fr": "FR"
+  },
+  "skip": {
+    "toContent": "Skip to content"
+  },
+  "sound": {
+    "enable": "Enable ambient sound",
+    "disable": "Disable ambient sound",
+    "label": "Sound"
+  },
+  "preloader": {
+    "hint": "Initialising systems"
+  },
+  "cmdk": {
+    "ariaLabel": "Command palette",
+    "placeholder": "Jump to a page, project, action…",
+    "esc": "esc",
+    "empty": "No matches.",
+    "groupPages": "Pages",
+    "groupProjects": "Projects",
+    "groupActions": "Actions",
+    "actionSound": "Toggle ambient sound",
+    "actionSoundHint": "on / off",
+    "actionEmail": "Copy email address",
+    "actionEmailCopied": "Copied ✓",
+    "actionCv": "Download CV",
+    "actionCvHint": "PDF",
+    "actionPlay": "Play Deploy Run",
+    "actionPlayHint": "the game"
+  },
+  "gameBadge": {
+    "title": "Beat your best run",
+    "prefix": "Best deploy:",
+    "pts": "pts"
+  },
+  "home": {
+    "hero": {
+      "chipYears": "5+ Years",
+      "chipRole": "Technical Lead",
+      "chipLocation": "Tunis · UTC+1",
+      "desc": "Full-stack engineer & technical lead building secure, scalable systems on AWS — from architecture to deployment.",
+      "ctaWork": "View work",
+      "ctaAbout": "About me",
+      "resume": "Résumé",
+      "play": "Play the game",
+      "scroll": "Scroll to explore"
+    },
+    "stats": {
+      "sectionLabel": "01 / BY THE NUMBERS",
+      "items": [
+        { "num": "5", "suf": "+", "lbl": "Building production systems" },
+        { "num": "3", "lbl": "Startups — shipped across healthtech, aquaculture & enterprise" },
+        { "num": "2023", "lbl": "POESAM first-prize team (eSteps Health)" },
+        { "num": "AWS", "lbl": "Architecture, CI/CD & deployment" }
+      ]
+    },
+    "focus": {
+      "sectionLabel": "02 / FOCUS",
+      "heading1": "What I'm",
+      "heading2": "doing now",
+      "items": [
+        {
+          "idx": "001",
+          "h": "Leading cloud architecture at Aquadeep",
+          "p": "Designing scalable AWS systems, leading engineering and CI/CD pipelines, and driving uptime and reliability."
+        },
+        {
+          "idx": "002",
+          "h": "Full-stack delivery at RMSoftware",
+          "p": "Architecting production workloads with Angular, NestJS, Flutter and Ionic — with security baked in from the start."
+        },
+        {
+          "idx": "003",
+          "h": "Exploring React, Vue & Next.js",
+          "p": "Continuously modernizing my stack and sharpening front-of-stack craft alongside backend and infrastructure work."
+        }
+      ]
+    },
+    "featured": {
+      "sectionLabel": "03 / SELECTED WORK",
+      "heading1": "Things I've",
+      "heading2": "built & led",
+      "allProjects": "All projects",
+      "enter": "Enter",
+      "cards": {
+        "esteps": {
+          "title": "Real-time healthcare SaaS",
+          "desc": "Real-time healthcare SaaS — contributed backend and full-stack development on a Node.js / Angular / AWS platform with real-time patient monitoring. Part of the engineering team behind the product that won first prize at Orange POESAM 2023."
+        },
+        "aquadeep": {
+          "title": "Cloud platforms & reliability",
+          "desc": "Technical leadership on AWS architectures and CI/CD modernization — balancing delivery speed with production stability."
+        },
+        "rms": {
+          "title": "Enterprise full-stack delivery",
+          "desc": "Product work across Angular, NestJS, Flutter & Ionic with secure design patterns and microservices boundaries."
+        },
+        "novavespera": {
+          "title": "Novavespera",
+          "desc": "A focused portfolio & brand presence built for clarity, performance and credibility with hiring teams."
+        }
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "About · profile.md",
+    "title1": "Engineer who",
+    "title2": "leads & ships.",
+    "bio1": "I'm <b>Bilel Hedhli</b> — a Technical Lead and Full-Stack Engineer based in Tunis, Tunisia, with <b>over 5 years</b> delivering innovative, scalable, cloud-driven software.",
+    "bio2": "I build complex systems with JavaScript technologies — <b>Angular, Node.js, React, Next.js</b> — integrate cloud platforms like <b>AWS, Firebase and Docker</b>, and streamline delivery with CI/CD pipelines. I've led cross-functional teams, modernized legacy codebases, and shipped real-time healthcare and business applications end to end.",
+    "bio3": "I care about <b>secure design</b>, clean architecture, and the operational discipline that keeps production systems fast and reliable.",
+    "award": "★ First Prize, Orange POESAM 2023 — with eSteps Health",
+    "facts": {
+      "location": "Location",
+      "locationValue": "Tunis, Tunisia",
+      "experience": "Experience",
+      "experienceValue": "5+ years",
+      "currentRole": "Current role",
+      "currentRoleValue": "Technical Lead",
+      "focus": "Focus",
+      "focusValue": "AWS · Architecture",
+      "email": "Email",
+      "availability": "Availability",
+      "availabilityValue": "● Open to work"
+    },
+    "skills": {
+      "sectionLabel": "01 / CAPABILITIES",
+      "heading": "The toolkit",
+      "languages": "Languages & frameworks",
+      "cloud": "Cloud & delivery",
+      "data": "Data",
+      "architecture": "Architecture & security"
+    },
+    "education": {
+      "heading": "// Education",
+      "msc": "M.Sc. — Computer Software & Media Applications",
+      "mscMeta": "Higher Institute of Technology, Rades · 2020 — 2022",
+      "bsc": "B.Sc. — Computer Software Engineering",
+      "bscMeta": "Higher Institute of Technology, Bizerte · 2017 — 2020"
+    },
+    "certifications": {
+      "heading": "// Certifications",
+      "cert1": "Introduction to Programming Using Java",
+      "cert2": "Foundations of Cybersecurity",
+      "cert3": "HTML5 Application Development Fundamentals"
+    }
+  },
+  "experience": {
+    "eyebrow": "Experience · 2020 → now",
+    "title1": "Five years,",
+    "title2": "five teams.",
+    "lead": "From hands-on full-stack delivery to leading engineers and owning cloud architecture — a track record of shipping reliable systems and measurable impact.",
+    "current": "Current"
+  },
+  "projects": {
+    "eyebrowPrefix": "Selected work",
+    "title1": "Things I've",
+    "title2": "built & led.",
+    "lead": "A focused selection — platform engineering, cloud architecture and product delivery, with an emphasis on reliability, security and team outcomes.",
+    "moreLabel": "// Drag, browse, open — every project as a case study",
+    "carousel": {
+      "previous": "Previous",
+      "next": "Next",
+      "dragHint": "drag · click to open",
+      "viewCase": "View case"
+    },
+    "caseModal": {
+      "close": "Close",
+      "highlights": "Highlights",
+      "stack": "Stack",
+      "visitLive": "Visit live site",
+      "sourcePrivate": "Source private",
+      "fullCasePage": "Full case page",
+      "prev": "Prev",
+      "next": "Next",
+      "previousProject": "Previous project",
+      "nextProject": "Next project"
+    }
+  },
+  "projectCase": {
+    "caseStudy": "Case study",
+    "live": "Live",
+    "private": "Private",
+    "highlights": "Highlights",
+    "stack": "Stack",
+    "visitLive": "Visit live site",
+    "sourcePrivate": "Source private",
+    "allProjects": "All projects",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "contact": {
+    "eyebrow": "Contact · say hello",
+    "title": "Let's talk.",
+    "lead": "Open to engineering leadership, full-stack and cloud roles — and interesting collaborations. The fastest way to reach me is below.",
+    "labels": {
+      "email": "Email",
+      "phone": "Phone",
+      "linkedin": "LinkedIn",
+      "portfolio": "Portfolio",
+      "location": "Location"
+    },
+    "availability": {
+      "title": "Available for work",
+      "desc": "Currently open to new opportunities and freelance engagements. Typical reply within 24 hours."
+    },
+    "footerHeadline1": "Prefer email?",
+    "footerHeadline2": "I read every one.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@company.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "What's this about?",
+      "message": "Message",
+      "messagePlaceholder": "Tell me about the role or project…",
+      "send": "Send message",
+      "sent": "Sent",
+      "note": "// encrypted · no spam",
+      "thanks": "✓ Thanks — I'll be in touch shortly."
+    }
+  },
+  "play": {
+    "eyebrow": "Easter egg · canvas game",
+    "title": "Deploy Run",
+    "desc": "A career-themed platformer rebuilt on <b>Phaser 3</b>. Two levels — Staging by day, Production at night — with power-up forms, moving and crumbling platforms, checkpoints, a scored run with an S-to-C grade, and a boss incident to resolve before you can ship. Fully playable on phones with on-screen controls.",
+    "keysMove": "move",
+    "keysJump": "jump",
+    "keysDash": "dash",
+    "keysMute": "mute",
+    "keysRestart": "restart",
+    "touchHint": "· touch controls on mobile",
+    "credit": "Phaser 3 · art: Sunny Land by ansimuz"
+  },
+  "notFound": {
+    "eyebrow": "Error · 404",
+    "title1": "Lost the",
+    "title2": "thread.",
+    "lead": "That page doesn't exist — or moved. Let's get you back on track.",
+    "cta": "Back home"
+  },
+  "footer": {
+    "navigate": "Navigate",
+    "elsewhere": "Elsewhere",
+    "startConversation": "Start a conversation",
+    "tagline": "Full-Stack · Cloud · Leadership",
+    "defaultHeadline1": "Let's build",
+    "defaultHeadline2": "something solid."
+  },
+  "v2": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "experience": "Experience",
+      "projects": "Projects",
+      "play": "Play",
+      "contact": "Contact"
+    },
+    "common": {
+      "talk": "Let's talk",
+      "viewWork": "View work",
+      "resume": "Résumé",
+      "allProjects": "All projects",
+      "fullExperience": "Full experience",
+      "aboutMe": "About me",
+      "nextPage": "Next page",
+      "menu": "Menu",
+      "close": "Close",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu",
+      "language": "Language",
+      "skip": "Skip to content",
+      "home": "Home page"
+    },
+    "home": {
+      "metaTitle": "Full-Stack Engineer & Technical Lead",
+      "metaDesc": "Full-stack engineer and technical lead building secure, scalable systems on AWS, from architecture to deployment.",
+      "heroTitle": "Full-stack engineer building secure, scalable systems on AWS.",
+      "heroSub": "Technical lead with 5+ years shipping healthcare, aquaculture and enterprise platforms.",
+      "intro": "I design cloud architecture, lead engineering teams and ship full-stack products, from the first schema to the production pipeline.",
+      "workTitle": "Selected work",
+      "workSub": "Products I designed, built or led, from mobile apps to cloud platforms.",
+      "gameLine1": "Collect commits",
+      "gameLine2": "Stomp bugs",
+      "gameLine3": "Ship to production",
+      "gameBody": "Deploy Run is a pixel-art platformer about my job: two levels, a boss incident to resolve, and touch controls for phones.",
+      "gameCta": "Play Deploy Run",
+      "gameAlt": "Deploy Run gameplay: a fox platforming through a jungle level, collecting gems",
+      "expTitle": "Where I've worked"
+    },
+    "footer": {
+      "contact": "Contact",
+      "elsewhere": "Elsewhere",
+      "pages": "Pages",
+      "location": "Tunis, Tunisia (UTC+1)",
+      "rights": "© {year} Bilel Hedhli",
+      "built": "Built with Next.js and three.js"
+    },
+    "about": {
+      "metaDesc": "Technical lead and full-stack engineer with 5+ years building cloud-driven software on AWS: Angular, Node.js, React and secure architecture.",
+      "title": "Engineer who leads and ships.",
+      "photoAlt": "Portrait of Bilel Hedhli",
+      "bio1": "I'm Bilel Hedhli, a technical lead and full-stack engineer based in Tunis, with over five years delivering scalable, cloud-driven software.",
+      "bio2": "I build complex systems with Angular, Node.js, React and Next.js, run them on AWS, Firebase and Docker, and keep delivery fast with CI/CD. I've led cross-functional teams, modernized legacy codebases and shipped real-time healthcare and business applications end to end.",
+      "bio3": "I care about secure design, clean architecture and the operational discipline that keeps production systems fast and reliable.",
+      "facts": {
+        "location": "Location",
+        "locationV": "Tunis, Tunisia",
+        "experience": "Experience",
+        "experienceV": "5+ years",
+        "role": "Current role",
+        "roleV": "Full-stack engineer",
+        "focus": "Focus",
+        "focusV": "AWS architecture"
+      },
+      "toolkitTitle": "Toolkit",
+      "groups": {
+        "lang": "Languages and frameworks",
+        "cloud": "Cloud and delivery",
+        "data": "Data",
+        "arch": "Architecture and security"
+      },
+      "archItems": [
+        "System architecture",
+        "Microservices",
+        "Security best practices",
+        "Agile / Scrum"
+      ],
+      "awardTop": "First prize",
+      "awardBody": "Orange POESAM 2023, with the eSteps Health team.",
+      "eduTitle": "Education",
+      "edu": [
+        {
+          "degree": "M.Sc. Computer Software and Media Applications",
+          "school": "Higher Institute of Technology, Rades",
+          "years": "2020-2022"
+        },
+        {
+          "degree": "B.Sc. Computer Software Engineering",
+          "school": "Higher Institute of Technology, Bizerte",
+          "years": "2017-2020"
+        }
+      ],
+      "certTitle": "Certifications",
+      "certs": [
+        "Introduction to Programming Using Java",
+        "Foundations of Cybersecurity",
+        "HTML5 Application Development Fundamentals"
+      ]
+    },
+    "experience": {
+      "metaDesc": "Work history of Bilel Hedhli: technical lead and full-stack roles across healthcare, aquaculture and enterprise software.",
+      "title": "Experience",
+      "sub": "From developer to technical lead, across startups and product teams.",
+      "current": "Current"
+    },
+    "projects": {
+      "metaDesc": "Selected projects by Bilel Hedhli: mobile apps, e-commerce, event platforms and cloud systems.",
+      "title": "Projects",
+      "sub": "Personal products, client platforms and team work, each with its own case notes.",
+      "visit": "Visit live site",
+      "stack": "Stack",
+      "highlights": "Highlights",
+      "screens": "Screens",
+      "caseTitle": "{name}, case study"
+    },
+    "contact": {
+      "metaDesc": "Get in touch with Bilel Hedhli, full-stack engineer and technical lead based in Tunis. Open to engineering leadership, full-stack and cloud roles.",
+      "title": "Let's talk.",
+      "sub": "Open to engineering leadership, full-stack and cloud roles, and to interesting collaborations.",
+      "email": "Email",
+      "copy": "Copy",
+      "copied": "Copied",
+      "phone": "Phone",
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "formTitle": "Write a message",
+      "name": "Your name",
+      "from": "Your email",
+      "message": "Message",
+      "messageHelp": "A few lines on the role or project is plenty.",
+      "send": "Send by email",
+      "sendHelp": "Opens your mail app with this message filled in.",
+      "errName": "Please add your name.",
+      "errEmail": "Please enter a valid email address.",
+      "errMessage": "Please write a short message.",
+      "subject": "Hello from {name}"
+    },
+    "play": {
+      "metaTitle": "Deploy Run, the game",
+      "metaDesc": "A career-themed pixel-art platformer built on Phaser. Collect commits, stomp bugs, grab coffee for a shield, and ship to production.",
+      "title": "Deploy Run",
+      "sub": "A career-themed platformer built on Phaser. Two levels, power-up forms and a boss incident to resolve before you can ship.",
+      "move": "move",
+      "jump": "jump",
+      "dash": "dash",
+      "mute": "mute",
+      "restart": "restart",
+      "touch": "Touch controls on phones",
+      "credit": "Art: Sunny Land by ansimuz"
+    },
+    "notFound": {
+      "title": "Page not found.",
+      "body": "That page doesn't exist or has moved.",
+      "back": "Back home"
+    }
+  }
+}

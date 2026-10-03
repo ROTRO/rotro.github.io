@@ -22,7 +22,7 @@ export function personSchema(): Json {
     },
     sameAs: [
       'https://linkedin.com/in/bilel-hedhli',
-      'https://rotro.github.io',
+      'https://github.com/rotro',
       'https://novavespera.pro',
     ],
     knowsAbout: [
