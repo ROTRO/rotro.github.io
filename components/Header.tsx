@@ -3,12 +3,14 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import Brand from './Brand';
 import SoundToggle from './SoundToggle';
 import { NAV } from '@/lib/site';
 
 /** Fixed top header: brand, primary nav (Next Link), status, mobile toggle. */
 export default function Header() {
+  const tNav = useTranslations('nav');
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
@@ -36,7 +38,7 @@ export default function Header() {
               aria-current={isActive(item.to) ? 'page' : undefined}
               onClick={() => setOpen(false)}
             >
-              {item.label}
+              {tNav(item.key)}
             </Link>
           ))}
         </nav>

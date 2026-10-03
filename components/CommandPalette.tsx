@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { AnimatePresence, motion } from 'motion/react';
+import { useTranslations } from 'next-intl';
 import { NAV, SITE } from '@/lib/site';
 import { projects } from '@/lib/projects';
 
@@ -41,6 +42,7 @@ function fuzzy(query: string, target: string): number {
  */
 export default function CommandPalette() {
   const router = useRouter();
+  const tNav = useTranslations('nav');
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [active, setActive] = useState(0);
@@ -53,7 +55,7 @@ export default function CommandPalette() {
       ...NAV.map<Cmd>((n) => ({
         id: `page-${n.to}`,
         group: 'Pages',
-        label: n.label,
+        label: tNav(n.key),
         hint: n.to,
         run: (r) => r.push(n.to),
       })),
@@ -101,7 +103,7 @@ export default function CommandPalette() {
         run: (r) => r.push('/play'),
       },
     ],
-    []
+    [tNav]
   );
 
   const results = useMemo(() => {

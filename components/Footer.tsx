@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { NAV, SOCIALS, SITE } from '@/lib/site';
 import GameBadge from './GameBadge';
 
@@ -14,6 +15,7 @@ export default function Footer({
   headline = "Let's build\nsomething solid.",
   variant = 'primary',
 }: FooterProps) {
+  const tNav = useTranslations('nav');
   return (
     <footer className="foot">
       <div className="wrap">
@@ -52,7 +54,7 @@ export default function Footer({
             <h4>Navigate</h4>
             {NAV.filter((n) => n.to !== '/').map((n) => (
               <Link key={n.to} href={n.to}>
-                {n.label}
+                {tNav(n.key)}
               </Link>
             ))}
           </div>

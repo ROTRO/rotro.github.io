@@ -16,12 +16,12 @@ export const SITE = {
 } as const;
 
 export const NAV: NavLink[] = [
-  { label: 'Home', to: '/' },
-  { label: 'About', to: '/about' },
-  { label: 'Experience', to: '/experience' },
-  { label: 'Projects', to: '/projects' },
-  { label: 'Contact', to: '/contact' },
-  { label: 'Play', to: '/play' },
+  { key: 'home', to: '/' },
+  { key: 'about', to: '/about' },
+  { key: 'experience', to: '/experience' },
+  { key: 'projects', to: '/projects' },
+  { key: 'contact', to: '/contact' },
+  { key: 'play', to: '/play' },
 ];
 
 export const SOCIALS: SocialLink[] = [
